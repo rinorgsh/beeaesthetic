@@ -5,6 +5,9 @@
           <!-- Logo/Titre -->
           <div class="footer-brand">
             <h2 class="brand-name">BEE AESTHETIC</h2>
+            <div class="footer-section">
+                    <a href="#" @click.prevent="openTermsModal" class="footer-link">Termes et Conditions</a>
+                </div>
           </div>
           
           <!-- Localisation -->
@@ -20,6 +23,7 @@
             <a href="mailto:info@beeaesthetic.be" class="footer-link">info@beeaesthetic.be</a>
           </div>
           
+         
           <!-- Réseaux sociaux -->
           <div class="footer-section">
             <h3 class="footer-heading">Suivez-nous</h3>
@@ -43,11 +47,126 @@
           <p>© 2025 BEE AESTHETIC</p>
         </div>
       </div>
+      <div v-if="isTermsModalOpen" class="terms-modal-overlay" @click.self="closeTermsModal">
+            <div class="terms-modal">
+                <button class="modal-close" @click="closeTermsModal">&times;</button>
+                <h2>Conditions Générales de BEE AESTHETIC</h2>
+                <div class="terms-content">
+                    
+                    <h3>Établissement</h3>
+                    <p>BEE AESTHETIC est un salon spécialisé dans
+                        la manucure BIAB (Builder in a Bottle) et 
+                        propose également des formations professionnelles
+                        pour celles et ceux qui souhaitent se perfectionner 
+                        dans cette technique. Avec 4 ans d’expérience dans 
+                        le domaine, nous garantissons un service de haute qualité 
+                        dans un environnement propre, confortable et professionnel.</p>
+                        <h3>Tarif</h3>
+                        <p>
+                            Les tarifs des prestations sont 
+                            disponibles sur notre site de réservation
+                             et peuvent être amenés à évoluer en fonction
+                              des formations suivies et des investissements 
+                              réalisés afin de garantir un service optimal.
+                        </p>
+                        <h3>Rendez-vous</h3>
+                        <p>
+                            Les rendez-vous doivent être pris
+                             uniquement via le site ou le lien 
+                             disponible dans la bio Instagram de BEE AESTHETIC. 
+                             Toute annulation ou modification doit être effectuée 
+                             au moins 48 heures à l’avance. Dans ce cas, le montant
+                              payé pourra être utilisé pour une nouvelle réservation, 
+                              mais aucun remboursement ne sera effectué. En cas d’annulation
+                            moins de 24 heures avant le rendez-vous ou en cas d’absence (no-show),
+                            le montant total de la prestation sera dû, quel que soit 
+                            le motif (maladie, panne, imprévu, etc.).
+                            Nous demandons à nos clientes d’arriver à l’heure 
+                            exacte de leur rendez-vous pour ne pas perturber 
+                                 la séance en cours. Tout retard de moins de 15 minutes
+                                  entraînera une réduction de la durée du soin, mais 
+                                  le tarif complet restera dû. Un retard de plus de 15 minutes
+                                   sera considéré comme une absence et la prestation sera facturée 
+                                   en totalité. Afin de préserver l’expérience privée de chaque cliente,
+                                    il est demandé de venir seule à son rendez-vous, sauf exception
+                                     préalablement discutée.
+
+                        </p>
+                        <h3>Formation</h3>
+                        <p>
+                            Concernant les formations BIAB, elles s’adressent aux professionnels 
+                            comme aux débutants souhaitant se spécialiser. Une fois la formation 
+                            réservée, aucune annulation ou modification ne sera possible et aucun
+                            remboursement ne sera effectué, quelle que soit la raison invoquée.
+
+                        </p>
+                        <h3>Payement</h3>
+                        <p>
+                            Le paiement des prestations
+                             se fait en espèces ou via QR-code 
+                             directement au salon. Toute prestation doit
+                              être réglée en intégralité le jour même. Les prestations et 
+                              formations payées en avance ne sont pas remboursables.
+
+                        </p>
+                        <h3>Hygiène</h3>
+
+                        <p>
+                            L’hygiène est une priorité 
+                            absolue chez BEE AESTHETIC. 
+                            Tous les outils sont nettoyés 
+                            et stérilisés selon les normes en 
+                            vigueur. Par mesure de sécurité, 
+                            toute personne présentant des problèmes 
+                            de santé visibles (infections, blessures, etc.) 
+                            pourra se voir refuser la prestation. BEE AESTHETIC 
+                            met tout en œuvre pour offrir des services de qualité, 
+                            mais ne pourra être tenue responsable des réactions 
+                            allergiques ou des dommages résultant de soins inappropriés 
+                            après la prestation. Il est donc essentiel d’informer en amont de 
+                            toute allergie ou condition médicale particulière.
+
+                        </p>
+                        <h3>Confidentialité</h3>
+                        <p>
+                            Toutes les informations personnelles communiquées 
+                            par nos clientes sont traitées avec la plus grande 
+                            confidentialité et ne seront jamais partagées avec des 
+                            tiers sans consentement préalable.
+
+                        </p>
+                        <h3>Réclamation</h3>
+                        <p>
+                            Pour toute question ou réclamation, 
+                            BEE AESTHETIC est joignable uniquement 
+                            par e-mail à l’adresse info@beeaesthetic.be.
+                             Nous nous réservons le droit de modifier ces 
+                             conditions générales à tout moment, et toute 
+                             mise à jour sera communiquée aux clientes.
+                        </p>
+                        <h3>Conditions</h3>
+                        <p>
+                            En réservant une prestation chez BEE AESTHETIC, 
+                            vous acceptez automatiquement ces conditions générales.
+                        </p>
+                </div>
+            </div>
+        </div>
     </footer>
   </template>
   
   <script setup>
-  // Pas de logique spécifique nécessaire
+  import { ref } from 'vue'
+  
+  const isTermsModalOpen = ref(false)
+  
+  const openTermsModal = () => {
+      isTermsModalOpen.value = true
+  }
+  
+  const closeTermsModal = () => {
+      isTermsModalOpen.value = false
+  }
   </script>
   
   <style scoped>
@@ -228,4 +347,74 @@
       padding: 0 2rem 2rem;
     }
   }
+  .terms-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.terms-modal {
+    background-color: white;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.terms-modal h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #b3a090;
+    text-align: center;
+}
+
+.terms-content h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.terms-content p {
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .terms-modal {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .terms-modal h2 {
+        font-size: 1.3rem;
+    }
+
+    .terms-content h3 {
+        font-size: 1.1rem;
+    }
+}
   </style>
