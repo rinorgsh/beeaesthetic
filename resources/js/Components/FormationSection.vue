@@ -31,8 +31,7 @@
                 <div class="feature">
                   <h4 class="feature-title">Groupe restreint</h4>
                   <p class="feature-text">
-                    Maximum 4 participants par session pour garantir un suivi personnalisé et une attention individuelle tout au long de la formation.
-                  </p>
+                    Formation individuelle garantissant une attention totalement dédiée et un apprentissage adapté à votre rythme et à vos besoins spécifiques.                  </p>
                 </div>
                 
                 <div class="feature">

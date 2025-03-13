@@ -14,7 +14,7 @@
             fortifiant BIAB.
           </p>
           <div class="service-button-container">
-            <a href="/reserver" class="service-button">Réserver</a>
+            <a href="/rendez-vous" class="service-button">Réserver</a>
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
             seul ou comme base pour un vernis semi-permanent.
           </p>
           <div class="service-button-container">
-            <a href="/reserver" class="service-button">Réserver</a>
+            <a href="/rendez-vous" class="service-button">Réserver</a>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@
             Faites de vos ongles la chose la plus spéciale chez vous !
           </p>
           <div class="service-button-container">
-            <a href="/reserver" class="service-button">Réserver</a>
+            <a href="/rendez-vous" class="service-button">Réserver</a>
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@
             choix.
           </p>
           <div class="service-button-container">
-            <a href="/reserver" class="service-button">Réserver</a>
+            <a href="/rendez-vous" class="service-button">Réserver</a>
           </div>
         </div>
       </div>

@@ -132,17 +132,135 @@
         
         <!-- Bouton pour voir plus d'avis ou laisser un avis -->
         <div class="reviews-button-container">
-          <a href="/laisser-un-avis" class="reviews-button">Partagez votre expérience</a>
+        <button @click="openModal" class="reviews-button">Partagez votre expérience</button>
+      </div>
+      <div class="modal-overlay" v-if="isModalOpen" @click="closeModal">
+      <div class="modal-container" @click.stop>
+        <button class="modal-close" @click="closeModal">&times;</button>
+        <div class="modal-content">
+          <h3 class="modal-title">Partagez votre expérience</h3>
+          <!-- Conteneur pour le widget Salonized -->
+          <div id="salonized-reviews-container"></div>
         </div>
+      </div>
+    </div>
       </div>
     </section>
   </template>
   
   <script setup>
-  // Aucune logique spécifique nécessaire
-  </script>
+import { ref, onMounted } from 'vue';
+
+const isModalOpen = ref(false);
+
+const openModal = () => {
+  isModalOpen.value = true;
+  // Charger le script Salonized lorsque le modal est ouvert
+  setTimeout(() => {
+    loadSalonizedWidget();
+  }, 100);
+};
+
+const closeModal = () => {
+  isModalOpen.value = false;
+};
+
+const loadSalonizedWidget = () => {
+  // Vérifier si le script est déjà chargé
+  if (!document.getElementById('salonized-widget-script')) {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.salonized.com/widget.js';
+    script.setAttribute('data-name', 'salonized');
+    script.setAttribute('data-microsite-url', 'https://bee-aesthetic.salonized.com');
+    script.id = 'salonized-widget-script';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    // Créer le conteneur pour les reviews
+    const container = document.getElementById('salonized-reviews-container');
+    if (container) {
+      const reviewsDiv = document.createElement('div');
+      reviewsDiv.className = 'salonized-reviews-mini';
+      reviewsDiv.setAttribute('data-link', 'https://bee-aesthetic.salonized.com/reviews');
+      container.appendChild(reviewsDiv);
+    }
+  }
+};  </script>
   
   <style scoped>
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal-content {
+  padding: 2.5rem;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #555;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#salonized-reviews-container {
+  min-height: 400px;
+}
+
+/* Responsive pour le modal */
+@media (max-width: 767px) {
+  .modal-container {
+    width: 95%;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
   .reviews-section {
     padding: 5rem 0;
     background-color: #f8f8f8;

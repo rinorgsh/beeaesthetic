@@ -24,7 +24,7 @@
         
         <!-- Bouton réseaux sociaux -->
         <div class="social-button-container">
-          <a href="https://instagram.com/beeaesthetic" target="_blank" class="social-button">Réseaux sociaux</a>
+          <a href="https://www.instagram.com/beeaesthetic.be?igsh=OXZzc29xaTFhcXRv" target="_blank" class="social-button">Réseaux sociaux</a>
         </div>
       </div>
     </section>
