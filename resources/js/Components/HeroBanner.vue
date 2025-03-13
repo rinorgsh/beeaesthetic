@@ -53,7 +53,7 @@
   const currentMobileSlide = ref(0);
   const desktopInterval = ref(null);
   const mobileInterval = ref(null);
-  const slideInterval = 5000; // 5 secondes par image
+  const slideInterval = 2200; // 5 secondes par image
   
   // Fonctions pour passer à l'image suivante
   const nextDesktopSlide = () => {

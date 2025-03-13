@@ -1,59 +1,169 @@
 <template>
     <section class="contact-section">
-      <div class="container">
-        <!-- Formulaire centré -->
-        <div class="contact-form-container">
-          <h1 class="contact-title">Nous contacter</h1>
-          
-          <div class="contact-text">
-            <p>
-              Vous avez des questions, besoin de conseils ou souhaitez prendre rendez-vous ?
-              Je suis à votre disposition pour répondre à toutes vos demandes.
-            </p>
-            
-            <a href="mailto:info@beeaesthetic.be" class="contact-email">info@beeaesthetic.be</a>
-          </div>
-          
-          <form class="contact-form">
-            <div class="form-group-name">
-              <div class="form-field">
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" class="form-control">
-              </div>
-              
-              <div class="form-field">
-                <label for="nom">Nom de famille</label>
-                <input type="text" id="nom" class="form-control">
-              </div>
+        <div class="container">
+            <div class="contact-form-container">
+
+                <!-- Message de notification -->
+                <div 
+                    v-if="notification.message" 
+                    :class="[
+                        'notification', 
+                        notification.type === 'success' ? 'success' : 'error'
+                    ]"
+                >
+                    {{ notification.message }}
+                </div>
+
+                <h1 class="contact-title">Nous contacter</h1>
+                
+                <div class="contact-text">
+                    <p>
+                        Vous avez des questions, besoin de conseils ou souhaitez prendre rendez-vous ?
+                        Je suis à votre disposition pour répondre à toutes vos demandes.
+                    </p>
+                    
+                    <a href="mailto:info@beeaesthetic.be" class="contact-email">info@beeaesthetic.be</a>
+                </div>
+                
+                <form @submit.prevent="handleSubmit" class="contact-form">
+                    <div class="form-group-name">
+                        <div class="form-field">
+                            <label for="prenom">Prénom</label>
+                            <input 
+                                type="text" 
+                                id="prenom" 
+                                v-model="formData.prenom" 
+                                class="form-control"
+                                required
+                            >
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="nom">Nom de famille</label>
+                            <input 
+                                type="text" 
+                                id="nom" 
+                                v-model="formData.nom" 
+                                class="form-control"
+                                required
+                            >
+                        </div>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="email">E-mail <span class="required">(obligatoire)</span></label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            v-model="formData.email" 
+                            class="form-control" 
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="message">Message <span class="required">(obligatoire)</span></label>
+                        <textarea 
+                            id="message" 
+                            v-model="formData.message" 
+                            class="form-control" 
+                            rows="5" 
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn-submit">ENVOYER</button>
+                    </div>
+                </form>
             </div>
-            
-            <div class="form-field">
-              <label for="email">E-mail <span class="required">(obligatoire)</span></label>
-              <input type="email" id="email" class="form-control" required>
-            </div>
-            
-            <div class="form-field">
-              <label for="message">Message <span class="required">(obligatoire)</span></label>
-              <textarea id="message" class="form-control" rows="5" required></textarea>
-            </div>
-            
-            <div class="form-submit">
-              <button type="submit" class="btn-submit">ENVOYER</button>
-            </div>
-          </form>
         </div>
-      </div>
     </section>
-  </template>
-  
-  <script setup>
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Logique pour traiter le formulaire
-  };
-  </script>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import axios from 'axios'
+
+const formData = ref({
+    prenom: '',
+    nom: '',
+    email: '',
+    message: ''
+})
+
+const notification = ref({
+    message: '',
+    type: ''
+})
+
+// Fonction pour réinitialiser le message après un délai
+const clearNotification = () => {
+    setTimeout(() => {
+        notification.value.message = ''
+        notification.value.type = ''
+    }, 5000)
+}
+
+const handleSubmit = async () => {
+    try {
+        const response = await axios.post('/contact', {
+            prenom: formData.value.prenom,
+            nom: formData.value.nom,
+            email: formData.value.email,
+            message: formData.value.message
+        });
+        
+        // Message de succès
+        notification.value = {
+            message: 'Message envoyé avec succès !',
+            type: 'success'
+        }
+        
+        // Réinitialiser le formulaire
+        formData.value = {
+            prenom: '',
+            nom: '',
+            email: '',
+            message: ''
+        };
+
+        clearNotification()
+    } catch (error) {
+        // Gestion des erreurs
+        notification.value = {
+            message: 'Erreur lors de l\'envoi du message',
+            type: 'error'
+        }
+        console.error(error);
+        clearNotification()
+    }
+}
+</script>
+
+<!-- Le reste du style reste identique -->
   
   <style scoped>
+  .notification {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+.notification.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.notification.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
   .contact-section {
     padding: 5rem 0;
     background-color: #f8f8f8;

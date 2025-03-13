@@ -4,7 +4,7 @@
       <div class="formation-content">
         <h2 class="formation-title">Lancez-vous dans l'univers du BIAB grâce à nos formations professionnelles </h2>
         <div class="formation-button-container">
-          <a href="/reserver" class="formation-button">Réserver</a>
+          <a href="/contact" class="formation-button">Réserver</a>
         </div>
       </div>
     </section>
@@ -47,7 +47,7 @@
               </p>
               
               <div class="details-button-container">
-                <a href="/formations" class="details-button">Découvrir notre programme</a>
+                <!--<a href="/formations" class="details-button">Découvrir notre programme</a>-->
               </div>
             </div>
           </div>

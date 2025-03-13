@@ -20,20 +20,7 @@
           </div>
         </div>
         
-        <!-- Informations complémentaires -->
-        <div class="booking-info">
-          <div class="info-card">
-            <h3>Heures d'ouverture</h3>
-            <p>Lundi à Vendredi: 9h - 18h</p>
-            <p>Samedi: 10h - 16h</p>
-            <p>Dimanche: Fermé</p>
-          </div>
-          
-          <div class="info-card">
-            <h3>Politique d'annulation</h3>
-            <p>Merci d'annuler ou de reporter votre rendez-vous au moins 24h à l'avance.</p>
-          </div>
-        </div>
+        
       </div>
     </section>
   </template>
@@ -88,12 +75,8 @@
   }
   
   .widget-container {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    margin-bottom: 3rem;
-    padding: 1rem;
+    background-color: #f8f8f8;
+    
   }
   
   .booking-info {
