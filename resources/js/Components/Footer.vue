@@ -52,104 +52,74 @@
                 <button class="modal-close" @click="closeTermsModal">&times;</button>
                 <h2>Conditions Générales de BEE AESTHETIC</h2>
                 <div class="terms-content">
-                    
-                    <h3>Établissement</h3>
-                    <p>BEE AESTHETIC est un salon spécialisé dans
-                        la manucure BIAB (Builder in a Bottle) et 
-                        propose également des formations professionnelles
-                        pour celles et ceux qui souhaitent se perfectionner 
-                        dans cette technique. Avec 4 ans d’expérience dans 
-                        le domaine, nous garantissons un service de haute qualité 
-                        dans un environnement propre, confortable et professionnel.</p>
-                        <h3>Tarif</h3>
-                        <p>
-                            Les tarifs des prestations sont 
-                            disponibles sur notre site de réservation
-                             et peuvent être amenés à évoluer en fonction
-                              des formations suivies et des investissements 
-                              réalisés afin de garantir un service optimal.
-                        </p>
-                        <h3>Rendez-vous</h3>
-                        <p>
-                            Les rendez-vous doivent être pris
-                             uniquement via le site ou le lien 
-                             disponible dans la bio Instagram de BEE AESTHETIC. 
-                             Toute annulation ou modification doit être effectuée 
-                             au moins 48 heures à l’avance. Dans ce cas, le montant
-                              payé pourra être utilisé pour une nouvelle réservation, 
-                              mais aucun remboursement ne sera effectué. En cas d’annulation
-                            moins de 24 heures avant le rendez-vous ou en cas d’absence (no-show),
-                            le montant total de la prestation sera dû, quel que soit 
-                            le motif (maladie, panne, imprévu, etc.).
-                            Nous demandons à nos clientes d’arriver à l’heure 
-                            exacte de leur rendez-vous pour ne pas perturber 
-                                 la séance en cours. Tout retard de moins de 15 minutes
-                                  entraînera une réduction de la durée du soin, mais 
-                                  le tarif complet restera dû. Un retard de plus de 15 minutes
-                                   sera considéré comme une absence et la prestation sera facturée 
-                                   en totalité. Afin de préserver l’expérience privée de chaque cliente,
-                                    il est demandé de venir seule à son rendez-vous, sauf exception
-                                     préalablement discutée.
+    <h3>1. Présentation de BEE AESTHETIC</h3>
+    <ul>
+        <li>BEE AESTHETIC est un salon spécialisé dans la manucure BIAB (Builder in a Bottle) et propose des formations professionnelles.</li>
+        <li>Avec 4 ans d'expérience, nous garantissons un service de haute qualité dans un environnement propre, confortable et professionnel.</li>
+    </ul>
 
-                        </p>
-                        <h3>Formation</h3>
-                        <p>
-                            Concernant les formations BIAB, elles s’adressent aux professionnels 
-                            comme aux débutants souhaitant se spécialiser. Une fois la formation 
-                            réservée, aucune annulation ou modification ne sera possible et aucun
-                            remboursement ne sera effectué, quelle que soit la raison invoquée.
+    <h3>2. Tarifs</h3>
+    <ul>
+        <li>Les tarifs des prestations sont disponibles sur notre site de réservation.</li>
+        <li>Ils peuvent évoluer en fonction des formations suivies et des investissements réalisés afin de garantir un service optimal.</li>
+    </ul>
 
-                        </p>
-                        <h3>Payement</h3>
-                        <p>
-                            Le paiement des prestations
-                             se fait en espèces ou via QR-code 
-                             directement au salon. Toute prestation doit
-                              être réglée en intégralité le jour même. Les prestations et 
-                              formations payées en avance ne sont pas remboursables.
+    <h3>3. Prise de rendez-vous et annulations</h3>
+    <ul>
+        <li>Les rendez-vous doivent être pris uniquement via le site ou le lien Instagram de BEE AESTHETIC.</li>
+        <li>Toute annulation ou modification doit être effectuée au moins 48 heures à l'avance.</li>
+        <li>Le montant payé pourra être utilisé pour une nouvelle réservation, mais aucun remboursement ne sera effectué.</li>
+        <li>En cas d'annulation moins de 24 heures avant le rendez-vous ou en cas d'absence (no-show), le montant total de la prestation sera dû.</li>
+        <li>Nous demandons aux clientes d'arriver à l'heure exacte :</li>
+        <ul>
+            <li>Retard de moins de 15 minutes : prestation écourtée, tarif complet maintenu</li>
+            <li>Retard de plus de 15 minutes : prestation annulée et facturée en totalité</li>
+        </ul>
+        <li>Afin de préserver l'expérience privée de chaque cliente, il est demandé de venir seule, sauf exception préalablement discutée.</li>
+    </ul>
 
-                        </p>
-                        <h3>Hygiène</h3>
+    <h3>4. Formations BIAB</h3>
+    <ul>
+        <li>Les formations sont ouvertes aux professionnels et débutants.</li>
+        <li>Une fois réservée, aucune annulation ou modification ne sera possible.</li>
+        <li>Aucun remboursement ne sera effectué.</li>
+    </ul>
 
-                        <p>
-                            L’hygiène est une priorité 
-                            absolue chez BEE AESTHETIC. 
-                            Tous les outils sont nettoyés 
-                            et stérilisés selon les normes en 
-                            vigueur. Par mesure de sécurité, 
-                            toute personne présentant des problèmes 
-                            de santé visibles (infections, blessures, etc.) 
-                            pourra se voir refuser la prestation. BEE AESTHETIC 
-                            met tout en œuvre pour offrir des services de qualité, 
-                            mais ne pourra être tenue responsable des réactions 
-                            allergiques ou des dommages résultant de soins inappropriés 
-                            après la prestation. Il est donc essentiel d’informer en amont de 
-                            toute allergie ou condition médicale particulière.
+    <h3>5. Paiement</h3>
+    <ul>
+        <li>Le paiement se fait en espèces ou via QR-code directement au salon.</li>
+        <li>Toute prestation doit être réglée intégralement le jour même.</li>
+        <li>Les prestations et formations payées en avance ne sont pas remboursables.</li>
+    </ul>
 
-                        </p>
-                        <h3>Confidentialité</h3>
-                        <p>
-                            Toutes les informations personnelles communiquées 
-                            par nos clientes sont traitées avec la plus grande 
-                            confidentialité et ne seront jamais partagées avec des 
-                            tiers sans consentement préalable.
+    <h3>6. Hygiène et sécurité</h3>
+    <ul>
+        <li>L'hygiène est une priorité absolue.</li>
+        <li>Tous les outils sont nettoyés et stérilisés selon les normes en vigueur.</li>
+        <li>Toute personne présentant des problèmes de santé visibles pourra se voir refuser la prestation.</li>
+        <li>BEE AESTHETIC ne pourra être tenue responsable des réactions allergiques ou dommages résultant de soins inappropriés.</li>
+        <li>Il est essentiel d'informer en amont de toute allergie ou condition médicale particulière.</li>
+    </ul>
 
-                        </p>
-                        <h3>Réclamation</h3>
-                        <p>
-                            Pour toute question ou réclamation, 
-                            BEE AESTHETIC est joignable uniquement 
-                            par e-mail à l’adresse info@beeaesthetic.be.
-                             Nous nous réservons le droit de modifier ces 
-                             conditions générales à tout moment, et toute 
-                             mise à jour sera communiquée aux clientes.
-                        </p>
-                        <h3>Conditions</h3>
-                        <p>
-                            En réservant une prestation chez BEE AESTHETIC, 
-                            vous acceptez automatiquement ces conditions générales.
-                        </p>
-                </div>
+    <h3>7. Protection des données personnelles</h3>
+    <ul>
+        <li>Toutes les informations personnelles sont traitées avec la plus grande confidentialité.</li>
+        <li>Elles ne seront jamais partagées avec des tiers sans consentement préalable.</li>
+    </ul>
+
+    <h3>8. Contact</h3>
+    <ul>
+        <li>Pour toute question ou réclamation, contactez BEE AESTHETIC par e-mail à info@beeaesthetic.be.</li>
+    </ul>
+
+    <h3>9. Modifications des conditions générales</h3>
+    <ul>
+        <li>BEE AESTHETIC se réserve le droit de modifier ces conditions générales à tout moment.</li>
+        <li>Toute mise à jour sera communiquée aux clientes.</li>
+    </ul>
+
+    <p><strong>En réservant une prestation chez BEE AESTHETIC, vous acceptez automatiquement ces conditions générales.</strong></p>
+</div>
             </div>
         </div>
     </footer>
