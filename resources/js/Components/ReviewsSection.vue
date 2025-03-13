@@ -14,10 +14,14 @@
             <div class="review-content">
               <div class="review-quote">"</div>
               <p class="review-text">
-                Service impeccable et résultat exceptionnel. Le BIAB a complètement transformé mes ongles fragiles. Ils sont maintenant beaucoup plus résistants tout en restant naturels. Je ne peux plus m'en passer !
-              </p>
+                Mes ongles sont incroyable pour pas changer! Cliente depuis 4ans, 
+                je suis toujours aussi satisfaite. Son travail est hyper soigné, 
+                précis et impeccable. Elle est minutieuse et perfectionniste, et 
+                ça fait toute la différence! Mes ongles sont toujours en parfait 
+                état, jamais abîmés, et les poses tiennent super longtemps. Bref, 
+                la meilleure des PO, je recommande les yeux fermés ! </p>
               <div class="review-author">
-                <p class="author-name">Émilie R.</p>
+                <p class="author-name">Agnesa I.</p>
                 <div class="author-rating">
                   <span class="star">★</span>
                   <span class="star">★</span>
@@ -54,10 +58,11 @@
             <div class="review-content">
               <div class="review-quote">"</div>
               <p class="review-text">
-                Ambiance apaisante, service personnalisé et résultat sublime. Les french nails réalisées par Bee Aesthetic sont parfaites et tiennent plusieurs semaines sans s'abîmer. Un vrai plaisir à chaque visite.
-              </p>
+                Always a pleasure to get my nails done, 
+                she's thee sweetest and her work is amazinggg 🤍
+            </p>
               <div class="review-author">
-                <p class="author-name">Camille L.</p>
+                <p class="author-name">Sonya S.</p>
                 <div class="author-rating">
                   <span class="star">★</span>
                   <span class="star">★</span>
@@ -74,10 +79,13 @@
             <div class="review-content">
               <div class="review-quote">"</div>
               <p class="review-text">
-                Le nail art réalisé pour mon mariage était tout simplement magnifique. Subtil, élégant et parfaitement assorti à ma robe. Toutes mes invitées m'ont complimentée. Merci pour ce moment de beauté qui a contribué à rendre cette journée encore plus spéciale.
-              </p>
+                La meilleure prothésiste 
+                ongulaire que je connaisse. 
+                Elle fait un travail impeccable et de 
+                qualité. Ma Bee la meilleure 💛💛💛
+            </p>
               <div class="review-author">
-                <p class="author-name">Aurélie T.</p>
+                <p class="author-name">Xona.</p>
                 <div class="author-rating">
                   <span class="star">★</span>
                   <span class="star">★</span>
@@ -94,10 +102,14 @@
             <div class="review-content">
               <div class="review-quote">"</div>
               <p class="review-text">
-                Professionnalisme et expertise sont les maîtres mots chez Bee Aesthetic. J'apprécie particulièrement l'attention portée à la santé de l'ongle. Mes ongles n'ont jamais été aussi beaux et en bonne santé depuis que je fréquente ce salon.
-              </p>
+                Un 10/10! <br>
+                Un bel  accueil et un travail impeccable,
+                une douceur, une délicatesse et une finesse au 
+                top, un moment de détente garanti ! 
+                <br>
+                Je recommande !! 💕</p>
               <div class="review-author">
-                <p class="author-name">Juliette D.</p>
+                <p class="author-name">Shayma K.</p>
                 <div class="author-rating">
                   <span class="star">★</span>
                   <span class="star">★</span>
@@ -114,10 +126,13 @@
             <div class="review-content">
               <div class="review-quote">"</div>
               <p class="review-text">
-                La technique BIAB est révolutionnaire ! Après des années à lutter avec des ongles qui se dédoublent, j'ai enfin trouvé la solution. Le résultat est naturel, durable et mes ongles se renforcent progressivement. Je recommande vivement.
-              </p>
+                Des belles mains soignées sont importantes pour vous? 
+                Alors c’est l’endroit PARFAIT  ! <br>
+                Blerta est souriante, agréable et rapide, 
+                son travail est excellent, et surtout précis, 
+                soigné! Faites lui confiance les yeux fermés ! </p>
               <div class="review-author">
-                <p class="author-name">Marie P.</p>
+                <p class="author-name">Esma D.</p>
                 <div class="author-rating">
                   <span class="star">★</span>
                   <span class="star">★</span>
