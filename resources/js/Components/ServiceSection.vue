@@ -23,7 +23,7 @@
                 préservant leur santé naturelle.
               </p>
               <div class="service-btn-container">
-                <a href="/services/manicure" class="service-btn">En savoir plus</a>
+                <a href="/manicure" class="service-btn">En savoir plus</a>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@
                 compétences et vous guider vers l'excellence.
               </p>
               <div class="service-btn-container">
-                <a href="/services/formation" class="service-btn">En savoir plus</a>
+                <a href="/formation" class="service-btn">En savoir plus</a>
               </div>
             </div>
           </div>
