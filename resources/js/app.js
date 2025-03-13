@@ -7,7 +7,7 @@ import { createApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import axios from 'axios';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Beeaesthetic';
+const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 
 window.axios = axios;
