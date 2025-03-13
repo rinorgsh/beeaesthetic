@@ -10,7 +10,8 @@
           <!-- Localisation -->
           <div class="footer-section">
             <h3 class="footer-heading">Localisation</h3>
-            <p class="footer-info">Avenue Louise, 1050 Bruxelles</p>
+            <!--<p class="footer-info">Avenue Louise, 1050 Bruxelles</p>-->
+            <p class="footer-info">Bruxelles</p>
           </div>
           
           <!-- Contact -->
