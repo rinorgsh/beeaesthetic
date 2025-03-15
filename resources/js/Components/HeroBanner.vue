@@ -25,7 +25,7 @@
     <div class="hero-content">
       <h1 class="hero-title">BEE AESTHETIC</h1>
       <p class="hero-subtitle">Your Nails, Your Signature</p>
-      <a href="/rendez-vous" class="cta-button">Rendez-vous</a>
+      <a href="#" class="cta-button">Rendez-vous</a>
     </div>
   </section>
 </template>
@@ -204,7 +204,7 @@ onBeforeUnmount(() => {
   border-radius: 30px;
   transition: all 0.4s ease;
   text-decoration: none;
-  margin-top: 1.5rem;
+  margin-top: 3.5rem;
   position: relative;
   border: 2px solid #000;
   outline: none;
@@ -280,6 +280,7 @@ onBeforeUnmount(() => {
   .cta-button {
     padding: 10px 25px;
     font-size: 1rem;
+    margin-top: 10rem; /* Augmentation supplémentaire de la marge pour mobile */
   }
 }
 
