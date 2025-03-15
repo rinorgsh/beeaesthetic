@@ -12,11 +12,11 @@
 <script setup>
 import TopNav from '@/Components/TopNav.vue';
 
-import Footer from '@/components/Footer.vue';
-import AboutSection from '@/components/AboutSection.vue';
+import Footer from '@/Components/Footer.vue';
+import AboutSection from '@/Components/AboutSection.vue';
 
-import Rdv from '@/components/RdvSection.vue';
-import SocialSection from '@/components/SocialSection.vue';
+import Rdv from '@/Components/RdvSection.vue';
+import SocialSection from '@/Components/SocialSection.vue';
 
 
 

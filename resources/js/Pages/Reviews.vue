@@ -8,8 +8,8 @@
 
 <script setup>
 import TopNav from '@/Components/TopNav.vue';
-import Footer from '@/components/Footer.vue';
-import ReviewsSection from '@/components/ReviewsSection.vue';
+import Footer from '@/Components/Footer.vue';
+import ReviewsSection from '@/Components/ReviewsSection.vue';
 
 
 
