@@ -14,7 +14,7 @@
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
             <div class="formation-description">
-              <h3 class="details-title">Une formation d'excellence pour les professionnels de l'onglerie</h3>
+              <h3 class="details-title">Une formation d'excellence pour les professionnelles de l'onglerie</h3>
               
               <p class="details-text">
                 Chez Bee Aesthetic, nous proposons des formations BIAB (Builder In A Bottle) de qualité supérieure, conçues pour vous permettre de maîtriser cette technique révolutionnaire qui allie simplicité d'application et résultats exceptionnels.

@@ -25,7 +25,7 @@
     <div class="hero-content">
       <h1 class="hero-title">BEE AESTHETIC</h1>
       <p class="hero-subtitle">Your Nails, Your Signature</p>
-      <a href="#" class="cta-button">Rendez-vous</a>
+      <a href="/rendez-vous" class="cta-button">Rendez-vous</a>
     </div>
   </section>
 </template>

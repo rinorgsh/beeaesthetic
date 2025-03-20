@@ -16,6 +16,8 @@ Route::get('/reviews', [HomeController::class, 'reviews'])->name('reviews');
 Route::get('/a-propos', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/rendez-vous', [HomeController::class, 'rdv'])->name('rdv');
+Route::get('/gallerie', [HomeController::class, 'gallerie'])->name('gallerie');
+
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
 Route::get('/test-error', function () {
