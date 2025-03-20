@@ -9,9 +9,9 @@
 
 <script setup>
 import TopNav from '@/Components/TopNav.vue';
-import ContactSection from '@/components/ContactSection.vue';
+import ContactSection from '@/Components/ContactSection.vue';
 
-import Footer from '@/components/Footer.vue';
+import Footer from '@/Components/Footer.vue';
 
 
 
