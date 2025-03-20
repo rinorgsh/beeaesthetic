@@ -22,10 +22,10 @@
             <a href="/manicure" class="nav-link px-3">
               <span data-hover="Manicure & BIAB">Manicure & BIAB</span>
             </a>
-            <!--
+            
             <a href="/gallerie" class="nav-link px-3">
               <span data-hover="Gallerie">Gallerie</span>
-            </a>-->
+            </a>
             <a href="/formation" class="nav-link px-3">
               <span data-hover="Formation">Formation</span>
             </a>

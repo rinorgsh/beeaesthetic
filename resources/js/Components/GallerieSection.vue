@@ -63,7 +63,7 @@
   // Générer le tableau d'images numérotées
   const createGalleryImages = () => {
     const images = [];
-    for (let i = 1; i <= 35; i++) {
+    for (let i = 1; i <= 22; i++) {
       const imageNumber = String(i).padStart(5, '0'); // Format: 00001, 00002, etc.
       images.push({
         src: `/Images/image${imageNumber}.jpeg`,
