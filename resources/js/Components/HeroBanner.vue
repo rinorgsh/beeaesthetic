@@ -8,7 +8,7 @@
            :key="'desktop-'+index" 
            class="slide-bg" 
            :class="{ active: currentDesktopSlide === index }"
-           :style="{ backgroundImage: `url(${image})` }">
+           :style="{ backgroundImage: `url(${getOptimizedUrl(image, 'desktop')})` }">
       </div>
     </div>
     
@@ -18,7 +18,7 @@
            :key="'mobile-'+index" 
            class="slide-bg" 
            :class="{ active: currentMobileSlide === index }"
-           :style="{ backgroundImage: `url(${image})` }">
+           :style="{ backgroundImage: `url(${getOptimizedUrl(image, 'mobile')})` }">
       </div>
     </div>
     
@@ -33,20 +33,30 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-// Images pour Desktop
+// Configuration Cloudinary
+const CLOUDINARY_CONFIG = {
+  cloudName: 'dqljt4ans',
+  baseUrl: 'https://res.cloudinary.com/dqljt4ans/image/upload'
+};
+
+// Images pour Desktop (public_ids Cloudinary)
 const desktopImages = ref([
-  'Images/banner.jpeg',
-  'Images/banner6.jpeg',
-  'Images/banner7.jpeg',
-  'Images/banner9.jpeg',
+  'banner_epakca',
+  'banner6_hvhrqp',
+  'banner7_f07bhd',
+
+  // Vous pouvez ajouter banner2_ipwpes si vous le souhaitez
 ]);
 
-// Images pour Mobile (iPhone, etc.)
+// Images pour Mobile
 const mobileImages = ref([
-  'Images/banner.jpeg',
-  'Images/banner4.jpeg',
-  'Images/banner5.jpeg',
-  'Images/banner3.jpeg',
+  'banner_epakca',
+  'banner6_hvhrqp',
+  'banner7_f07bhd',
+  'banner3_f85ria',
+  'banner4_ljmqfd',
+  'banner5_thgwzu',
+  'banner2_ipwpes'
 ]);
 
 // État pour le suivi des slides actives
@@ -54,7 +64,22 @@ const currentDesktopSlide = ref(0);
 const currentMobileSlide = ref(0);
 const desktopInterval = ref(null);
 const mobileInterval = ref(null);
-const slideInterval = 2200; // 5 secondes par image
+const slideInterval = 2200;
+
+/**
+ * Génère une URL Cloudinary optimisée avec transformations automatiques
+ * @param {string} publicId - L'identifiant public de l'image sur Cloudinary
+ * @param {string} deviceType - 'desktop' ou 'mobile'
+ * @returns {string} URL optimisée
+ */
+function getOptimizedUrl(publicId, deviceType = 'desktop') {
+  const transformations = deviceType === 'mobile'
+    ? 'f_auto,q_auto:good,w_800,c_fill,g_auto,dpr_auto'   // Mobile: 800px, qualité optimisée
+    : 'f_auto,q_auto:good,w_1920,c_fill,g_auto,dpr_auto'; // Desktop: 1920px, qualité optimisée
+  
+  // Construction de l'URL avec transformations
+  return `${CLOUDINARY_CONFIG.baseUrl}/${transformations}/${publicId}`;
+}
 
 // Fonctions pour passer à l'image suivante
 const nextDesktopSlide = () => {
@@ -65,14 +90,12 @@ const nextMobileSlide = () => {
   currentMobileSlide.value = (currentMobileSlide.value + 1) % mobileImages.value.length;
 };
 
-// Fonction pour précharger les images pour de meilleures performances
+// Fonction pour précharger les images critiques
 function preloadImages() {
-  // Précharger uniquement les deux premières images de chaque set
+  // Précharger la première image de chaque slideshow
   const imagesToPreload = [
-    desktopImages.value[0],
-    desktopImages.value[1],
-    mobileImages.value[0],
-    mobileImages.value[1]
+    getOptimizedUrl(desktopImages.value[0], 'desktop'),
+    getOptimizedUrl(mobileImages.value[0], 'mobile'),
   ];
   
   imagesToPreload.forEach(src => {
@@ -83,10 +106,7 @@ function preloadImages() {
 
 // Démarrer les sliders au montage du composant
 onMounted(() => {
-  // Précharger les images principales
   preloadImages();
-  
-  // Démarrer les intervalles de défilement
   desktopInterval.value = setInterval(nextDesktopSlide, slideInterval);
   mobileInterval.value = setInterval(nextMobileSlide, slideInterval);
 });
@@ -136,11 +156,11 @@ onBeforeUnmount(() => {
 
 /* Affichage conditionnel basé sur la taille de l'écran */
 .desktop-slideshow {
-  display: block; /* Par défaut visible pour desktop */
+  display: block;
 }
 
 .mobile-slideshow {
-  display: none; /* Par défaut caché pour desktop */
+  display: none;
 }
 
 .slide-bg {
@@ -149,12 +169,16 @@ onBeforeUnmount(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: 100% auto;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1.5s ease;
   background-color: #000;
+  /* Optimisation du rendu */
+  will-change: opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .slide-bg.active {
@@ -179,6 +203,7 @@ onBeforeUnmount(() => {
   margin-bottom: 1.5rem;
   line-height: 1.2;
   color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
@@ -189,6 +214,7 @@ onBeforeUnmount(() => {
   opacity: 0.95;
   color: white;
   margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button {
@@ -280,7 +306,7 @@ onBeforeUnmount(() => {
   .cta-button {
     padding: 10px 25px;
     font-size: 1rem;
-    margin-top: 10rem; /* Augmentation supplémentaire de la marge pour mobile */
+    margin-top: 10rem;
   }
 }
 

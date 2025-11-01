@@ -16,7 +16,11 @@ export default defineConfig({
                 },
             },
         }),
+        
     ],
+    define: {
+        'import.meta.env.VITE_CLOUDINARY_CLOUD_NAME': JSON.stringify(process.env.CLOUDINARY_CLOUD_NAME),
+    },
     resolve: {
         alias: {
             '@': '/resources/js',

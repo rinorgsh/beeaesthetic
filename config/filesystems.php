@@ -14,6 +14,7 @@ return [
     */
 
     'default' => env('FILESYSTEM_DISK', 'local'),
+    'download_expiration' => env('DOWNLOAD_LINK_EXPIRATION', 60),
 
     /*
     |--------------------------------------------------------------------------
@@ -46,6 +47,12 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        
+        'private' => [
+            'driver' => 'local',
+            'root' => storage_path('app/private'),
+            'visibility' => 'private',
+        ],
 
         's3' => [
             'driver' => 's3',
@@ -56,8 +63,7 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
-            'throw' => false,
-            'report' => false,
+            'throw' => true, // ✅ Changez false en true pour voir les erreurs
         ],
 
     ],

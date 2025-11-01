@@ -33,7 +33,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        // ✅ REDIRECTION VERS ADMIN AU LIEU DE DASHBOARD
+        return redirect()->intended(route('admin.dashboard', absolute: false));
     }
 
     /**
@@ -47,6 +48,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
+        // ✅ REDIRECTION VERS HOME APRÈS DÉCONNEXION
         return redirect('/');
     }
 }

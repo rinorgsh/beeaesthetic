@@ -14,7 +14,7 @@
           <div class="footer-section">
             <h3 class="footer-heading">Localisation</h3>
             <!--<p class="footer-info">Avenue Louise, 1050 Bruxelles</p>-->
-            <p class="footer-info">Bruxelles</p>
+            <p class="footer-info">Chaussée de Boondael 166, 1050 Ixelles</p>
           </div>
           
           <!-- Contact -->
