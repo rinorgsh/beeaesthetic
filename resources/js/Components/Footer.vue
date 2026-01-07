@@ -6,27 +6,29 @@
           <div class="footer-brand">
             <h2 class="brand-name">BEE AESTHETIC</h2>
             <div class="footer-section">
-                    <a href="#" @click.prevent="openTermsModal" class="footer-link">Termes et Conditions</a>
+                    <a href="#" @click.prevent="openFaqModal" class="footer-link">{{ t.footer.faq }}</a>
+                    <span class="link-separator">•</span>
+                    <a href="#" @click.prevent="openTermsModal" class="footer-link">{{ t.footer.terms }}</a>
                 </div>
           </div>
-          
+
           <!-- Localisation -->
           <div class="footer-section">
-            <h3 class="footer-heading">Localisation</h3>
+            <h3 class="footer-heading">{{ t.footer.location }}</h3>
             <!--<p class="footer-info">Avenue Louise, 1050 Bruxelles</p>-->
             <p class="footer-info">Chaussée de Boondael 166, 1050 Ixelles</p>
           </div>
-          
+
           <!-- Contact -->
           <div class="footer-section">
-            <h3 class="footer-heading">Contact</h3>
+            <h3 class="footer-heading">{{ t.footer.contact }}</h3>
             <a href="mailto:info@beeaesthetic.be" class="footer-link">info@beeaesthetic.be</a>
           </div>
-          
-         
+
+
           <!-- Réseaux sociaux -->
           <div class="footer-section">
-            <h3 class="footer-heading">Suivez-nous</h3>
+            <h3 class="footer-heading">{{ t.footer.follow_us }}</h3>
             <div class="social-links">
                 <a href="https://www.instagram.com/beeaesthetic.be?igsh=OXZzc29xaTFhcXRv" target="_blank" class="social-link" aria-label="Instagram">
                 <svg class="social-icon" viewBox="0 0 24 24" width="18" height="18">
@@ -47,78 +49,103 @@
           <p>© 2025 BEE AESTHETIC</p>
         </div>
       </div>
+      <!-- Modal FAQ -->
+      <div v-if="isFaqModalOpen" class="terms-modal-overlay" @click.self="closeFaqModal">
+            <div class="terms-modal">
+                <button class="modal-close" @click="closeFaqModal">&times;</button>
+                <h2>{{ t.faq.title }}</h2>
+                <div class="terms-content">
+                    <h3>{{ t.faq.q1_title }}</h3>
+                    <p>{{ t.faq.q1_answer }}</p>
+
+                    <h3>{{ t.faq.q2_title }}</h3>
+                    <p>{{ t.faq.q2_answer }}</p>
+
+                    <h3>{{ t.faq.q3_title }}</h3>
+                    <p>{{ t.faq.q3_answer }}</p>
+
+                    <h3>{{ t.faq.q4_title }}</h3>
+                    <p>
+                        {{ t.faq.q4_answer }}<br>
+                        <a href="mailto:info@beeaesthetic.be" class="footer-link">info@beeaesthetic.be</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+      <!-- Modal Termes et Conditions -->
       <div v-if="isTermsModalOpen" class="terms-modal-overlay" @click.self="closeTermsModal">
             <div class="terms-modal">
                 <button class="modal-close" @click="closeTermsModal">&times;</button>
-                <h2>Conditions Générales de BEE AESTHETIC</h2>
+                <h2>{{ t.terms.title }}</h2>
                 <div class="terms-content">
-    <h3>1. Présentation de BEE AESTHETIC</h3>
+    <h3>{{ t.terms.section1_title }}</h3>
     <ul>
-        <li>BEE AESTHETIC est un salon spécialisé dans la manucure BIAB (Builder in a Bottle) et propose des formations professionnelles.</li>
-        <li>Avec 4 ans d'expérience, nous garantissons un service de haute qualité dans un environnement propre, confortable et professionnel.</li>
+        <li>{{ t.terms.section1_point1 }}</li>
+        <li>{{ t.terms.section1_point2 }}</li>
     </ul>
 
-    <h3>2. Tarifs</h3>
+    <h3>{{ t.terms.section2_title }}</h3>
     <ul>
-        <li>Les tarifs des prestations sont disponibles sur notre site de réservation.</li>
-        <li>Ils peuvent évoluer en fonction des formations suivies et des investissements réalisés afin de garantir un service optimal.</li>
+        <li>{{ t.terms.section2_point1 }}</li>
+        <li>{{ t.terms.section2_point2 }}</li>
     </ul>
 
-    <h3>3. Prise de rendez-vous et annulations</h3>
+    <h3>{{ t.terms.section3_title }}</h3>
     <ul>
-        <li>Les rendez-vous doivent être pris uniquement via le site ou le lien Instagram de BEE AESTHETIC.</li>
-        <li>Toute annulation ou modification doit être effectuée au moins 48 heures à l'avance.</li>
-        <li>Le montant payé pourra être utilisé pour une nouvelle réservation, mais aucun remboursement ne sera effectué.</li>
-        <li>En cas d'annulation moins de 24 heures avant le rendez-vous ou en cas d'absence (no-show), le montant total de la prestation sera dû.</li>
-        <li>Nous demandons aux clientes d'arriver à l'heure exacte :</li>
+        <li>{{ t.terms.section3_point1 }}</li>
+        <li>{{ t.terms.section3_point2 }}</li>
+        <li>{{ t.terms.section3_point3 }}</li>
+        <li>{{ t.terms.section3_point4 }}</li>
+        <li>{{ t.terms.section3_point5 }}</li>
         <ul>
-            <li>Retard de moins de 15 minutes : prestation écourtée, tarif complet maintenu</li>
-            <li>Retard de plus de 15 minutes : prestation annulée et facturée en totalité</li>
+            <li>{{ t.terms.section3_point5_sub1 }}</li>
+            <li>{{ t.terms.section3_point5_sub2 }}</li>
         </ul>
-        <li>Afin de préserver l'expérience privée de chaque cliente, il est demandé de venir seule, sauf exception préalablement discutée.</li>
+        <li>{{ t.terms.section3_point6 }}</li>
     </ul>
 
-    <h3>4. Formations BIAB</h3>
+    <h3>{{ t.terms.section4_title }}</h3>
     <ul>
-        <li>Les formations sont ouvertes aux professionnels et débutants.</li>
-        <li>Une fois réservée, aucune annulation ou modification ne sera possible.</li>
-        <li>Aucun remboursement ne sera effectué.</li>
+        <li>{{ t.terms.section4_point1 }}</li>
+        <li>{{ t.terms.section4_point2 }}</li>
+        <li>{{ t.terms.section4_point3 }}</li>
     </ul>
 
-    <h3>5. Paiement</h3>
+    <h3>{{ t.terms.section5_title }}</h3>
     <ul>
-        <li>Le paiement se fait en espèces ou via QR-code directement au salon.</li>
-        <li>Toute prestation doit être réglée intégralement le jour même.</li>
-        <li>Les prestations et formations payées en avance ne sont pas remboursables.</li>
+        <li>{{ t.terms.section5_point1 }}</li>
+        <li>{{ t.terms.section5_point2 }}</li>
+        <li>{{ t.terms.section5_point3 }}</li>
     </ul>
 
-    <h3>6. Hygiène et sécurité</h3>
+    <h3>{{ t.terms.section6_title }}</h3>
     <ul>
-        <li>L'hygiène est une priorité absolue.</li>
-        <li>Tous les outils sont nettoyés et stérilisés selon les normes en vigueur.</li>
-        <li>Toute personne présentant des problèmes de santé visibles pourra se voir refuser la prestation.</li>
-        <li>BEE AESTHETIC ne pourra être tenue responsable des réactions allergiques ou dommages résultant de soins inappropriés.</li>
-        <li>Il est essentiel d'informer en amont de toute allergie ou condition médicale particulière.</li>
+        <li>{{ t.terms.section6_point1 }}</li>
+        <li>{{ t.terms.section6_point2 }}</li>
+        <li>{{ t.terms.section6_point3 }}</li>
+        <li>{{ t.terms.section6_point4 }}</li>
+        <li>{{ t.terms.section6_point5 }}</li>
     </ul>
 
-    <h3>7. Protection des données personnelles</h3>
+    <h3>{{ t.terms.section7_title }}</h3>
     <ul>
-        <li>Toutes les informations personnelles sont traitées avec la plus grande confidentialité.</li>
-        <li>Elles ne seront jamais partagées avec des tiers sans consentement préalable.</li>
+        <li>{{ t.terms.section7_point1 }}</li>
+        <li>{{ t.terms.section7_point2 }}</li>
     </ul>
 
-    <h3>8. Contact</h3>
+    <h3>{{ t.terms.section8_title }}</h3>
     <ul>
-        <li>Pour toute question ou réclamation, contactez BEE AESTHETIC par e-mail à info@beeaesthetic.be.</li>
+        <li>{{ t.terms.section8_point1 }}</li>
     </ul>
 
-    <h3>9. Modifications des conditions générales</h3>
+    <h3>{{ t.terms.section9_title }}</h3>
     <ul>
-        <li>BEE AESTHETIC se réserve le droit de modifier ces conditions générales à tout moment.</li>
-        <li>Toute mise à jour sera communiquée aux clientes.</li>
+        <li>{{ t.terms.section9_point1 }}</li>
+        <li>{{ t.terms.section9_point2 }}</li>
     </ul>
 
-    <p><strong>En réservant une prestation chez BEE AESTHETIC, vous acceptez automatiquement ces conditions générales.</strong></p>
+    <p><strong>{{ t.terms.acceptance }}</strong></p>
 </div>
             </div>
         </div>
@@ -127,15 +154,26 @@
   
   <script setup>
   import { ref } from 'vue'
-  
+  import { useTranslation } from '@/composables/useTranslation'
+
+  const { t } = useTranslation()
   const isTermsModalOpen = ref(false)
-  
+  const isFaqModalOpen = ref(false)
+
   const openTermsModal = () => {
       isTermsModalOpen.value = true
   }
-  
+
   const closeTermsModal = () => {
       isTermsModalOpen.value = false
+  }
+
+  const openFaqModal = () => {
+      isFaqModalOpen.value = true
+  }
+
+  const closeFaqModal = () => {
+      isFaqModalOpen.value = false
   }
   </script>
   
@@ -240,6 +278,12 @@
   .footer-link:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+
+  .link-separator {
+    margin: 0 0.8rem;
+    color: #999;
+    font-size: 0.9rem;
   }
   
   .social-links {

@@ -3,157 +3,40 @@
       <div class="container">
         <!-- En-tête de la section -->
         <div class="reviews-header">
-          <h2 class="reviews-title">Ce que nos clientes disent</h2>
-          <p class="reviews-subtitle">Des expériences authentiques partagées par notre clientèle</p>
+          <h2 class="reviews-title">{{ t.reviews.title }}</h2>
+          <p class="reviews-subtitle">{{ t.reviews.subtitle }}</p>
         </div>
         
-        <!-- Grille des témoignages -->
-        <div class="reviews-grid">
-          <!-- Témoignage 1 -->
-          <div class="review-card">
-            <div class="review-content">
-              <div class="review-quote">"</div>
-              <p class="review-text">
-                Mes ongles sont incroyable pour pas changer! Cliente depuis 4ans, 
-                je suis toujours aussi satisfaite. Son travail est hyper soigné, 
-                précis et impeccable. Elle est minutieuse et perfectionniste, et 
-                ça fait toute la différence! Mes ongles sont toujours en parfait 
-                état, jamais abîmés, et les poses tiennent super longtemps. Bref, 
-                la meilleure des PO, je recommande les yeux fermés ! </p>
-              <div class="review-author">
-                <p class="author-name">Agnesa I.</p>
-                <div class="author-rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Témoignage 2 -->
-          <div class="review-card">
-            <div class="review-content">
-              <div class="review-quote">"</div>
-              <p class="review-text">
-                J'ai suivi la formation BIAB et je suis impressionnée par la qualité de l'enseignement. Les techniques sont expliquées de façon claire et précise. Grâce à cette formation, j'ai pu développer mes compétences et proposer de nouveaux services à mes clientes.
-              </p>
-              <div class="review-author">
-                <p class="author-name">Sophie M.</p>
-                <div class="author-rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Témoignage 3 -->
-          <div class="review-card">
-            <div class="review-content">
-              <div class="review-quote">"</div>
-              <p class="review-text">
-                Always a pleasure to get my nails done, 
-                she's thee sweetest and her work is amazinggg 🤍
-            </p>
-              <div class="review-author">
-                <p class="author-name">Sonya S.</p>
-                <div class="author-rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Témoignage 4 -->
-          <div class="review-card">
-            <div class="review-content">
-              <div class="review-quote">"</div>
-              <p class="review-text">
-                La meilleure prothésiste 
-                ongulaire que je connaisse. 
-                Elle fait un travail impeccable et de 
-                qualité. Ma Bee la meilleure 💛💛💛
-            </p>
-              <div class="review-author">
-                <p class="author-name">Xona.</p>
-                <div class="author-rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Témoignage 5 -->
-          <div class="review-card">
-            <div class="review-content">
-              <div class="review-quote">"</div>
-              <p class="review-text">
-                Un 10/10! <br>
-                Un bel  accueil et un travail impeccable,
-                une douceur, une délicatesse et une finesse au 
-                top, un moment de détente garanti ! 
-                <br>
-                Je recommande !! 💕</p>
-              <div class="review-author">
-                <p class="author-name">Shayma K.</p>
-                <div class="author-rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Témoignage 6 -->
-          <div class="review-card">
-            <div class="review-content">
-              <div class="review-quote">"</div>
-              <p class="review-text">
-                Des belles mains soignées sont importantes pour vous? 
-                Alors c’est l’endroit PARFAIT  ! <br>
-                Blerta est souriante, agréable et rapide, 
-                son travail est excellent, et surtout précis, 
-                soigné! Faites lui confiance les yeux fermés ! </p>
-              <div class="review-author">
-                <p class="author-name">Esma D.</p>
-                <div class="author-rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- Widget Google Reviews (Elfsight ou autre) -->
+        <div class="reviews-widget-container">
+          <!--
+            INSTRUCTIONS :
+            1. Créez votre widget sur Elfsight.com ou POWR.io
+            2. Copiez le code fourni (2 lignes généralement)
+            3. Collez-le ici en remplacement de ce commentaire
+
+            Exemple Elfsight :
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+            <div class="elfsight-app-xxxxx-xxxxx"></div>
+
+            Exemple POWR :
+            <script src="https://www.powr.io/powr.js"></script>
+            <div class="powr-google-reviews" id="xxxxx"></div>
+          -->
+
+          <!-- Elfsight Google Reviews -->
+          <div class="elfsight-app-0d6471fc-81c6-4051-b5fd-d00fe316727e" data-elfsight-app-lazy></div>
         </div>
         
         <!-- Bouton pour voir plus d'avis ou laisser un avis -->
         <div class="reviews-button-container">
-        <button @click="openModal" class="reviews-button">Partagez votre expérience</button>
+        <button @click="openModal" class="reviews-button">{{ t.reviews.share_experience }}</button>
       </div>
       <div class="modal-overlay" v-if="isModalOpen" @click="closeModal">
       <div class="modal-container" @click.stop>
         <button class="modal-close" @click="closeModal">&times;</button>
         <div class="modal-content">
-          <h3 class="modal-title">Partagez votre expérience</h3>
+          <h3 class="modal-title">{{ t.reviews.share_experience }}</h3>
           <!-- Conteneur pour le widget Salonized -->
           <div id="salonized-reviews-container"></div>
         </div>
@@ -165,8 +48,26 @@
   
   <script setup>
 import { ref, onMounted } from 'vue';
+import { useTranslation } from '@/composables/useTranslation';
 
+const { t } = useTranslation();
 const isModalOpen = ref(false);
+
+// Charger le script Elfsight au montage du composant
+onMounted(() => {
+  loadElfsightScript();
+});
+
+const loadElfsightScript = () => {
+  // Vérifier si le script Elfsight n'est pas déjà chargé
+  if (!document.getElementById('elfsight-platform-script')) {
+    const script = document.createElement('script');
+    script.src = 'https://elfsightcdn.com/platform.js';
+    script.id = 'elfsight-platform-script';
+    script.async = true;
+    document.body.appendChild(script);
+  }
+};
 
 const openModal = () => {
   isModalOpen.value = true;
@@ -190,7 +91,7 @@ const loadSalonizedWidget = () => {
     script.id = 'salonized-widget-script';
     script.async = true;
     document.body.appendChild(script);
-    
+
     // Créer le conteneur pour les reviews
     const container = document.getElementById('salonized-reviews-container');
     if (container) {
@@ -200,7 +101,8 @@ const loadSalonizedWidget = () => {
       container.appendChild(reviewsDiv);
     }
   }
-};  </script>
+};
+</script>
   
   <style scoped>
 
@@ -310,75 +212,21 @@ const loadSalonizedWidget = () => {
     letter-spacing: 0.5px;
   }
   
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
+  .reviews-widget-container {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    padding: 0 1rem;
   }
-  
-  .review-card {
+
+  .widget-placeholder {
+    text-align: center;
+    padding: 4rem 2rem;
     background-color: white;
     border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-  }
-  
-  .review-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-  }
-  
-  .review-content {
-    padding: 2.5rem;
-    position: relative;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .review-quote {
-    position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
-    font-size: 3rem;
-    color: #f0e8e2;
-    font-family: 'Georgia', serif;
-    line-height: 1;
-  }
-  
-  .review-text {
+    border: 2px dashed #e0e0e0;
+    color: #888;
     font-size: 1rem;
     line-height: 1.8;
-    color: #555;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 1;
-    flex-grow: 1;
-  }
-  
-  .review-author {
-    margin-top: auto;
-    border-top: 1px solid #f0e8e2;
-    padding-top: 1.5rem;
-  }
-  
-  .author-name {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #b3a090;
-    margin-bottom: 0.5rem;
-  }
-  
-  .author-rating {
-    display: flex;
-  }
-  
-  .star {
-    color: #b3a090;
-    margin-right: 2px;
   }
   
   .reviews-button-container {
@@ -405,31 +253,22 @@ const loadSalonizedWidget = () => {
   }
   
   /* Media queries pour responsive */
-  @media (max-width: 991px) {
-    .reviews-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
   @media (max-width: 767px) {
     .reviews-section {
       padding: 3rem 0;
     }
-    
-    .reviews-grid {
-      grid-template-columns: 1fr;
-    }
-    
+
     .reviews-title {
       font-size: 2rem;
     }
-    
+
     .reviews-subtitle {
       font-size: 1rem;
     }
-    
-    .review-content {
-      padding: 2rem;
+
+    .widget-placeholder {
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
     }
   }
   </style>

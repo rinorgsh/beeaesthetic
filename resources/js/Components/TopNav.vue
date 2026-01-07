@@ -20,36 +20,35 @@
         <div class="d-none d-md-flex align-items-center">
           <div class="nav-links me-4">
             <a href="/" class="nav-link px-3">
-              <span data-hover="Home">Home</span>
+              <span :data-hover="t.nav.home">{{ t.nav.home }}</span>
             </a>
-            
-            <!-- ✅ MODIFIÉ : /manicure → /services -->
+
             <a href="/services" class="nav-link px-3">
-              <span data-hover="Nos Services">Nos Services</span>
+              <span :data-hover="t.nav.services">{{ t.nav.services }}</span>
             </a>
-            
+
             <a href="/formation" class="nav-link px-3">
-              <span data-hover="Formation">Formation</span>
+              <span :data-hover="t.nav.formation">{{ t.nav.formation }}</span>
             </a>
 
             <a href="/shop" class="nav-link px-3">
-              <span data-hover="Boutique">Boutique</span>
+              <span :data-hover="t.nav.boutique">{{ t.nav.boutique }}</span>
             </a>
-            
+
             <a href="/gallerie" class="nav-link px-3">
-              <span data-hover="Gallerie">Gallerie</span>
+              <span :data-hover="t.nav.gallery">{{ t.nav.gallery }}</span>
             </a>
-            
+
             <a href="/reviews" class="nav-link px-3">
-              <span data-hover="Reviews">Reviews</span>
+              <span :data-hover="t.nav.reviews">{{ t.nav.reviews }}</span>
             </a>
 
             <a href="/a-propos" class="nav-link px-3">
-              <span data-hover="À propos">À propos</span>
+              <span :data-hover="t.nav.about">{{ t.nav.about }}</span>
             </a>
 
             <a href="/contact" class="nav-link px-3">
-              <span data-hover="Contact">Contact</span>
+              <span :data-hover="t.nav.contact">{{ t.nav.contact }}</span>
             </a>
           </div>
           
@@ -78,10 +77,29 @@
               <span v-if="cartCount > 0" class="cart-badge">{{ cartCount }}</span>
             </a>
           </div>
-          
+
+          <!-- Sélecteur de langue -->
+          <div class="language-selector me-3">
+            <button
+              @click="changeLanguage('fr')"
+              class="lang-btn"
+              :class="{ active: currentLanguage === 'fr' }"
+            >
+              FR
+            </button>
+            <span class="lang-separator">/</span>
+            <button
+              @click="changeLanguage('en')"
+              class="lang-btn"
+              :class="{ active: currentLanguage === 'en' }"
+            >
+              EN
+            </button>
+          </div>
+
           <!-- Bouton Rendez-vous -->
           <div>
-            <a href="/rendez-vous" class="btn-rendez-vous px-4 py-2">Rendez-vous</a>
+            <a href="/rendez-vous" class="btn-rendez-vous px-4 py-2">{{ t.nav.appointment }}</a>
           </div>
         </div>
       </div>
@@ -89,19 +107,18 @@
       <!-- Menu mobile -->
       <div class="mobile-menu" :class="{ 'open': isMenuOpen }">
         <div class="mobile-nav-links">
-          <a href="/" class="mobile-nav-link">Home</a>
-          <!-- ✅ MODIFIÉ : /services au lieu de /manicure -->
-          <a href="/services" class="mobile-nav-link">Nos Services</a>
-          <a href="/formation" class="mobile-nav-link">Formation</a>
-          <a href="/shop" class="mobile-nav-link">Boutique</a>
-          <a href="/gallerie" class="mobile-nav-link">Gallerie</a>
-          <a href="/reviews" class="mobile-nav-link">Reviews</a>
-          <a href="/a-propos" class="mobile-nav-link">À propos</a>
-          <a href="/contact" class="mobile-nav-link">Contact</a>
-          
+          <a href="/" class="mobile-nav-link">{{ t.nav.home }}</a>
+          <a href="/services" class="mobile-nav-link">{{ t.nav.services }}</a>
+          <a href="/formation" class="mobile-nav-link">{{ t.nav.formation }}</a>
+          <a href="/shop" class="mobile-nav-link">{{ t.nav.boutique }}</a>
+          <a href="/gallerie" class="mobile-nav-link">{{ t.nav.gallery }}</a>
+          <a href="/reviews" class="mobile-nav-link">{{ t.nav.reviews }}</a>
+          <a href="/a-propos" class="mobile-nav-link">{{ t.nav.about }}</a>
+          <a href="/contact" class="mobile-nav-link">{{ t.nav.contact }}</a>
+
           <!-- Localisation mobile -->
-          <a 
-            href="https://www.google.com/maps/place/Chaussée+de+Boondael+166,+1050+Ixelles" 
+          <a
+            href="https://www.google.com/maps/place/Chaussée+de+Boondael+166,+1050+Ixelles"
             target="_blank"
             rel="noopener noreferrer"
             class="mobile-nav-link"
@@ -110,18 +127,37 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
-            Notre localisation
+            {{ t.nav.location }}
           </a>
-          
+
           <!-- Panier mobile -->
           <a href="/panier" class="mobile-nav-link">
             <svg class="cart-icon-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
             </svg>
-            Panier <span v-if="cartCount > 0">({{ cartCount }})</span>
+            {{ t.nav.cart }} <span v-if="cartCount > 0">({{ cartCount }})</span>
           </a>
-          
-          <a href="/rendez-vous" class="mobile-btn-rendez-vous">Rendez-vous</a>
+
+          <!-- Sélecteur de langue mobile -->
+          <div class="mobile-language-selector">
+            <button
+              @click="changeLanguage('fr')"
+              class="mobile-lang-btn"
+              :class="{ active: currentLanguage === 'fr' }"
+            >
+              FR
+            </button>
+            <span class="mobile-lang-separator">/</span>
+            <button
+              @click="changeLanguage('en')"
+              class="mobile-lang-btn"
+              :class="{ active: currentLanguage === 'en' }"
+            >
+              EN
+            </button>
+          </div>
+
+          <a href="/rendez-vous" class="mobile-btn-rendez-vous">{{ t.nav.appointment }}</a>
         </div>
       </div>
     </div>
@@ -129,11 +165,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useCart } from '@/composables/useCart';
+import { useTranslation } from '@/composables/useTranslation';
 
 const isMenuOpen = ref(false);
 const { cartCount } = useCart();
+const { t, currentLanguage, changeLanguage } = useTranslation();
 </script>
 
 <style scoped>
@@ -384,6 +422,81 @@ const { cartCount } = useCart();
   margin-top: 10px;
   display: inline-block;
   text-align: center;
+}
+
+/* Sélecteur de langue desktop */
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 5px 8px;
+  transition: all 0.3s;
+  font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
+}
+
+.lang-btn:hover {
+  color: #000;
+}
+
+.lang-btn.active {
+  color: #b3a090;
+  font-weight: 500;
+}
+
+.lang-separator {
+  color: #999;
+  font-size: 0.85rem;
+  margin: 0 2px;
+}
+
+/* Sélecteur de langue mobile */
+.mobile-language-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.mobile-lang-btn {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: all 0.3s;
+  font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
+}
+
+.mobile-lang-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.mobile-lang-btn.active {
+  color: #b3a090;
+  font-weight: 500;
+}
+
+.mobile-lang-separator {
+  color: #999;
+  font-size: 1rem;
+  margin: 0 4px;
 }
 
 /* Icônes mobile */

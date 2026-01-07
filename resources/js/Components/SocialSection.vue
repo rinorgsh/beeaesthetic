@@ -3,35 +3,37 @@
       <div class="container">
         <!-- Titre de la section -->
         <div class="social-title-container">
-          <h2 class="social-title">Suivez-nous sur les réseaux sociaux</h2>
+          <h2 class="social-title">{{ t.social_section.title }}</h2>
         </div>
-        
+
         <!-- Galerie d'images -->
         <div class="social-gallery">
           <div class="social-image">
-            <img src="Images/social1.jpeg" alt="Ongles élégants" class="img-fluid">
+            <img src="Images/social1.jpeg" :alt="t.social_section.alt_1" class="img-fluid">
           </div>
           <div class="social-image">
-            <img src="Images/social2.jpeg" alt="Style et ongles" class="img-fluid">
+            <img src="Images/social2.jpeg" :alt="t.social_section.alt_2" class="img-fluid">
           </div>
           <div class="social-image">
-            <img src="Images/social3.jpeg" alt="Ongles naturels" class="img-fluid">
+            <img src="Images/social3.jpeg" :alt="t.social_section.alt_3" class="img-fluid">
           </div>
           <div class="social-image">
-            <img src="Images/social4.jpeg" alt="Ongles design" class="img-fluid">
+            <img src="Images/social4.jpeg" :alt="t.social_section.alt_4" class="img-fluid">
           </div>
         </div>
-        
+
         <!-- Bouton réseaux sociaux -->
         <div class="social-button-container">
-          <a href="https://www.instagram.com/beeaesthetic.be?igsh=OXZzc29xaTFhcXRv" target="_blank" class="social-button">Réseaux sociaux</a>
+          <a href="https://www.instagram.com/beeaesthetic.be?igsh=OXZzc29xaTFhcXRv" target="_blank" class="social-button">{{ t.social_section.button }}</a>
         </div>
       </div>
     </section>
   </template>
   
   <script setup>
-  // Aucune logique spécifique nécessaire
+  import { useTranslation } from '@/composables/useTranslation'
+
+  const { t } = useTranslation()
   </script>
   
   <style scoped>

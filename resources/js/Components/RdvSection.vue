@@ -4,16 +4,15 @@
       <div class="row align-items-center">
         <!-- Colonne gauche avec le titre et texte -->
         <div class="col-lg-6 booking-content">
-          <h2 class="booking-title">Prendre un rendez-vous</h2>
+          <h2 class="booking-title">{{ t.rdv_section.title }}</h2>
           <p class="booking-text">
-            Prenez rendez-vous dès aujourd'hui et offrez à vos ongles le soin qu'ils
-            méritent. Réservez votre moment de beauté en quelques clics !
+            {{ t.rdv_section.text }}
           </p>
         </div>
-        
+
         <!-- Colonne droite avec le bouton -->
         <div class="col-lg-6 booking-button-container">
-          <a href="/rendez-vous" class="booking-button">Rendez-vous</a>
+          <a href="/rendez-vous" class="booking-button">{{ t.rdv_section.button }}</a>
         </div>
       </div>
     </div>
@@ -21,7 +20,9 @@
 </template>
 
 <script setup>
-// Aucune logique spécifique nécessaire
+import { useTranslation } from '@/composables/useTranslation'
+
+const { t } = useTranslation()
 </script>
 
 <style scoped>

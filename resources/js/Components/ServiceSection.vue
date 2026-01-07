@@ -2,7 +2,7 @@
   <section class="services-section">
     <!-- Titre de la section -->
     <div class="section-title-container">
-      <h2 class="section-title">Nos services</h2>
+      <h2 class="section-title">{{ t.services.title }}</h2>
     </div>
     
     <!-- Contenu des services -->
@@ -12,17 +12,14 @@
         <div class="col-lg-6 col-md-6 service-col">
           <div class="service-content">
             <div class="service-image">
-              <img src="Images/service2.jpeg" alt="Manucure, Pédicure & BIAB" class="img-fluid">
+              <img src="Images/service2.jpeg" :alt="t.services.manicure_title" class="img-fluid">
             </div>
-            <h3 class="service-title">Manucure, Pédicure & BIAB</h3>
+            <h3 class="service-title">{{ t.services.manicure_title }}</h3>
             <p class="service-description">
-              Sublimez vos mains et vos pieds avec nos soins professionnels
-              alliant élégance et durabilité. Nous utilisons des techniques modernes telles que le BIAB
-              (Builder in a Bottle) pour renforcer vos ongles, ainsi que la Japanese Manicure pour 
-              un soin naturel et nourrissant.
+              {{ t.services.manicure_desc }}
             </p>
             <div class="service-btn-container">
-              <a href="/services" class="service-btn">Découvrir</a>
+              <a href="/services" class="service-btn">{{ t.services.discover }}</a>
             </div>
           </div>
         </div>
@@ -31,16 +28,14 @@
         <div class="col-lg-6 col-md-6 service-col">
           <div class="service-content">
             <div class="service-image service-image-alt">
-              <img src="Images/cils.jpg" alt="Cils & Sourcils" class="img-fluid">
+              <img src="Images/cils.jpg" :alt="t.services.lashes_title" class="img-fluid">
             </div>
-            <h3 class="service-title">Cils & Sourcils</h3>
+            <h3 class="service-title">{{ t.services.lashes_title }}</h3>
             <p class="service-description">
-              Intensifiez votre regard avec nos soins de rehaussement de cils et brow lift. 
-              Des techniques professionnelles pour un regard naturellement sublimé 
-              qui dure plusieurs semaines.
+              {{ t.services.lashes_desc }}
             </p>
             <div class="service-btn-container">
-              <a href="/services" class="service-btn">Découvrir</a>
+              <a href="/services" class="service-btn">{{ t.services.discover }}</a>
             </div>
           </div>
         </div>
@@ -49,16 +44,14 @@
         <div class="col-lg-6 col-md-6 service-col">
           <div class="service-content">
             <div class="service-image">
-              <img src="Images/epi.jpg" alt="Épilation" class="img-fluid">
+              <img src="Images/epi.jpg" :alt="t.services.waxing_title" class="img-fluid">
             </div>
-            <h3 class="service-title">Épilation</h3>
+            <h3 class="service-title">{{ t.services.waxing_title }}</h3>
             <p class="service-description">
-              Une peau douce et lisse grâce à nos épilations à la cire professionnelles. 
-              Des prestations adaptées à toutes les zones du corps, 
-              réalisées avec douceur et précision.
+              {{ t.services.waxing_desc }}
             </p>
             <div class="service-btn-container">
-              <a href="/services" class="service-btn">Découvrir</a>
+              <a href="/services" class="service-btn">{{ t.services.discover }}</a>
             </div>
           </div>
         </div>
@@ -67,16 +60,14 @@
         <div class="col-lg-6 col-md-6 service-col">
           <div class="service-content">
             <div class="service-image service-image-alt">
-              <img src="Images/soin.jpg" alt="Soins du Visage" class="img-fluid">
+              <img src="Images/soin.jpg" :alt="t.services.facial_title" class="img-fluid">
             </div>
-            <h3 class="service-title">Soins du Visage</h3>
+            <h3 class="service-title">{{ t.services.facial_title }}</h3>
             <p class="service-description">
-              Offrez-vous un moment de détente avec nos soins du visage personnalisés. 
-              Un protocole complet adapté à votre type de peau pour une 
-              beauté éclatante et durable.
+              {{ t.services.facial_desc }}
             </p>
             <div class="service-btn-container">
-              <a href="/services" class="service-btn">Découvrir</a>
+              <a href="/services" class="service-btn">{{ t.services.discover }}</a>
             </div>
           </div>
         </div>
@@ -85,19 +76,15 @@
         <div class="col-lg-12 service-col service-col-full">
           <div class="service-content service-content-horizontal">
             <div class="service-image-horizontal">
-              <img src="Images/service.jpeg" alt="Formation" class="img-fluid">
+              <img src="Images/service.jpeg" :alt="t.services.training_title" class="img-fluid">
             </div>
             <div class="service-text-horizontal">
-              <h3 class="service-title">Formation Professionnelle</h3>
+              <h3 class="service-title">{{ t.services.training_title }}</h3>
               <p class="service-description">
-                Perfectionnez votre maîtrise du BIAB et des techniques
-                d'onglerie avec nos formations professionnelles
-                complètes. Que vous soyez débutant ou déjà
-                expérimenté, nos cours sont conçus pour développer vos
-                compétences et vous guider vers l'excellence.
+                {{ t.services.training_desc }}
               </p>
               <div class="service-btn-container">
-                <a href="/formation" class="service-btn">En savoir plus</a>
+                <a href="/formation" class="service-btn">{{ t.services.learn_more }}</a>
               </div>
             </div>
           </div>
@@ -108,7 +95,9 @@
 </template>
 
 <script setup>
-// Aucune logique spécifique nécessaire
+import { useTranslation } from '@/composables/useTranslation'
+
+const { t } = useTranslation()
 </script>
 
 <style scoped>

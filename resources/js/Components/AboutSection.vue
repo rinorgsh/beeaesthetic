@@ -4,16 +4,15 @@
       <div class="row align-items-center">
         <!-- Texte à gauche -->
         <div class="col-lg-6 about-text">
-          <h1 class="about-title mb-4">Qui sommes-nous ?</h1>
+          <h1 class="about-title mb-4">{{ t.about.title }}</h1>
           <p class="about-description">
-            Chez Bee Aesthetic, nous sommes passionnés par l'art et la 
-            beauté des ongles. Avec plus de 4 ans d'expérience, nous 
-            nous engageons à offrir des services haut de gamme, alliant 
-            soin, élégance et expertise. Spécialistes du BIAB et des 
-            formations professionnelles, notre mission est de sublimer 
-            vos mains tout en préservant la santé de vos ongles. Chaque 
-            détail compte, car pour nous, votre satisfaction est notre 
-            priorité.
+            {{ t.about.paragraph1 }}
+          </p>
+          <p class="about-description">
+            {{ t.about.paragraph2 }}
+          </p>
+          <p class="about-description">
+            {{ t.about.paragraph3 }}
           </p>
         </div>
         
@@ -26,7 +25,7 @@
                   <div v-for="(image, index) in images" :key="index" 
                        class="slide" 
                        :class="{ active: currentSlide === index }">
-                    <img :src="image" alt="Soins des ongles professionnels" class="img-fluid">
+                    <img :src="image" :alt="t.about.image_alt" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -40,6 +39,9 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { useTranslation } from '@/composables/useTranslation';
+
+const { t } = useTranslation();
 
 // Liste des images pour le slider
 const images = ref([

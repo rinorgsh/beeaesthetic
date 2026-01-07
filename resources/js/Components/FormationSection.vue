@@ -2,9 +2,9 @@
     <section class="formation-banner">
       <div class="formation-overlay"></div>
       <div class="formation-content">
-        <h2 class="formation-title">Lancez-vous dans l'univers du BIAB grâce à nos formations professionnelles </h2>
+        <h2 class="formation-title">{{ t.formation.banner_title }}</h2>
         <div class="formation-button-container">
-          <a href="/contact" class="formation-button">Réserver</a>
+          <a href="/contact" class="formation-button">{{ t.formation.banner_button }}</a>
         </div>
       </div>
     </section>
@@ -14,38 +14,39 @@
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
             <div class="formation-description">
-              <h3 class="details-title">Une formation d'excellence pour les professionnelles de l'onglerie</h3>
-              
+              <h3 class="details-title">{{ t.formation.details_title }}</h3>
+
               <p class="details-text">
-                Chez Bee Aesthetic, nous proposons des formations BIAB (Builder In A Bottle) de qualité supérieure, conçues pour vous permettre de maîtriser cette technique révolutionnaire qui allie simplicité d'application et résultats exceptionnels.
+                {{ t.formation.details_intro }}
               </p>
-              
+
               <div class="details-features">
                 <div class="feature">
-                  <h4 class="feature-title">Formation complète</h4>
+                  <h4 class="feature-title">{{ t.formation.feature1_title }}</h4>
                   <p class="feature-text">
-                    Une journée intensive pour maîtriser la technique BIAB, de la préparation de l'ongle naturel jusqu'à l'application parfaite du gel fortifiant.
+                    {{ t.formation.feature1_text }}
                   </p>
                 </div>
-                
+
                 <div class="feature">
-                  <h4 class="feature-title">Groupe restreint</h4>
+                  <h4 class="feature-title">{{ t.formation.feature2_title }}</h4>
                   <p class="feature-text">
-                    Formation individuelle garantissant une attention totalement dédiée et un apprentissage adapté à votre rythme et à vos besoins spécifiques.                  </p>
+                    {{ t.formation.feature2_text }}
+                  </p>
                 </div>
-                
+
                 <div class="feature">
-                  <h4 class="feature-title">Support pédagogique</h4>
+                  <h4 class="feature-title">{{ t.formation.feature3_title }}</h4>
                   <p class="feature-text">
-                    Repartez avec un manuel complet détaillant chaque étape de la technique, ainsi qu'un certificat attestant de votre formation.
+                    {{ t.formation.feature3_text }}
                   </p>
                 </div>
               </div>
-              
+
               <p class="details-conclusion">
-                Que vous soyez débutant ou professionnel cherchant à élargir votre offre de services, notre formation BIAB vous donnera toutes les clés pour satisfaire votre clientèle avec des soins d'exception.
+                {{ t.formation.details_conclusion }}
               </p>
-              
+
               <div class="details-button-container">
                 <!--<a href="/formations" class="details-button">Découvrir notre programme</a>-->
               </div>
@@ -57,7 +58,9 @@
   </template>
   
   <script setup>
-  // Aucune logique spécifique nécessaire
+  import { useTranslation } from '@/composables/useTranslation'
+
+  const { t } = useTranslation()
   </script>
   
   <style scoped>

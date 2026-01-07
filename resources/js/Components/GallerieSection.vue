@@ -3,9 +3,9 @@
     <div class="container">
       <!-- Titre de la section -->
       <div class="section-header text-center mb-5">
-        <h2 class="section-title">Gallerie</h2>
+        <h2 class="section-title">{{ t.gallery.title }}</h2>
         <div class="separator"><span></span></div>
-        <p class="section-subtitle">Découvrez nos plus belles créations</p>
+        <p class="section-subtitle">{{ t.gallery.subtitle }}</p>
       </div>
       
       <!-- Grille de la galerie avec chargement progressif -->
@@ -34,13 +34,13 @@
       <!-- Indicateur de chargement -->
       <div class="loading-container text-center mt-4" v-if="isLoading">
         <div class="loading-spinner"></div>
-        <p class="loading-text">Chargement...</p>
+        <p class="loading-text">{{ t.gallery.loading }}</p>
       </div>
 
       <!-- Indicateur de fin -->
       <div class="end-message text-center mt-4" v-if="!hasMoreImagesToLoad && visibleImages.length > 0 && !isLoading">
         <div class="separator mt-4"><span></span></div>
-        <p class="end-text mt-2">Vous avez tout vu</p>
+        <p class="end-text mt-2">{{ t.gallery.end_message }}</p>
       </div>
       
       <!-- Lightbox pour afficher les images en grand -->
@@ -65,6 +65,9 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue';
+import { useTranslation } from '@/composables/useTranslation';
+
+const { t } = useTranslation();
 
 // ✅ CONFIGURATION CLOUDINARY
 // Remplacez 'YOUR_CLOUD_NAME' par votre vrai cloud name

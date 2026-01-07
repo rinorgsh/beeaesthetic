@@ -16,8 +16,34 @@
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
         @inertiaHead
+
+        <!-- Styles pour cacher le widget Google Translate -->
+        <style>
+            /* Cacher le widget Google Translate par défaut */
+            #google_translate_element {
+                display: none !important;
+            }
+
+            /* Cacher la barre Google Translate en haut */
+            .goog-te-banner-frame {
+                display: none !important;
+            }
+
+            /* Réajuster le body quand Google Translate est actif */
+            body {
+                top: 0 !important;
+            }
+
+            /* Cacher le bouton "Original" de Google */
+            .goog-te-combo option:first-child {
+                display: none;
+            }
+        </style>
     </head>
     <body class="font-sans antialiased">
+        <!-- Conteneur invisible pour Google Translate -->
+        <div id="google_translate_element"></div>
+
         @inertia
     </body>
 </html>

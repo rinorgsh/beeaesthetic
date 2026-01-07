@@ -3,20 +3,40 @@
       <div class="container">
         <!-- En-tête élégant -->
         <div class="booking-header">
-          <h1 class="booking-title">Prenez rendez-vous</h1>
-          <p class="booking-subtitle">Choisissez le service et l'horaire qui vous conviennent</p>
+          <h1 class="booking-title">{{ t.appointment.title }}</h1>
+          <p class="booking-subtitle">{{ t.appointment.subtitle }}</p>
         </div>
         
-        <!-- Widget encadré -->
-        <div class="widget-container">
-          <!-- Code du widget Salonized -->
-          <div class="salonized-booking"
-               data-company="pTcZuo7p2qn8CMbyazim1obt"
-               data-color="#b3a090"
-               data-language="fr"
-               data-height="700"
-               data-inline="true"
-               data-outline="shadow">
+        <!-- Widgets en deux colonnes -->
+        <div class="widgets-grid">
+          <!-- Widget Manicure/Pédicure -->
+          <div class="widget-column">
+            <h2 class="widget-heading">{{ t.appointment.manicure_pedicure }}</h2>
+            <div class="widget-container">
+              <div class="salonized-booking"
+                   data-company="pTcZuo7p2qn8CMbyazim1obt"
+                   data-color="#b3a090"
+                   :data-language="currentLanguage"
+                   data-height="700"
+                   data-inline="true"
+                   data-outline="shadow">
+              </div>
+            </div>
+          </div>
+
+          <!-- Widget Soin du corps -->
+          <div class="widget-column">
+            <h2 class="widget-heading">{{ t.appointment.body_care }}</h2>
+            <div class="widget-container">
+              <div class="salonized-booking"
+                   data-company="UmuHfpCbEpkVyVfzeV1bMpNV"
+                   data-color="#FF6575"
+                   :data-language="currentLanguage"
+                   data-height="700"
+                   data-inline="true"
+                   data-outline="shadow">
+              </div>
+            </div>
           </div>
         </div>
         
@@ -25,20 +45,22 @@
     </section>
   </template>
   
-  <script>
-  export default {
-    name: "BookingWidget",
-    mounted() {
-      // Vérifier si le script n'est pas déjà chargé
-      if (!document.getElementById('salonized-loader')) {
-        const script = document.createElement('script');
-        script.src = "https://static-widget.salonized.com/loader.js";
-        script.async = true;
-        script.id = 'salonized-loader';
-        document.body.appendChild(script);
-      }
+  <script setup>
+  import { onMounted } from 'vue';
+  import { useTranslation } from '@/composables/useTranslation';
+
+  const { t, currentLanguage } = useTranslation();
+
+  onMounted(() => {
+    // Vérifier si le script n'est pas déjà chargé
+    if (!document.getElementById('salonized-loader')) {
+      const script = document.createElement('script');
+      script.src = "https://static-widget.salonized.com/loader.js";
+      script.async = true;
+      script.id = 'salonized-loader';
+      document.body.appendChild(script);
     }
-  }
+  });
   </script>
   
   <style scoped>
@@ -49,7 +71,7 @@
   }
   
   .container {
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
@@ -73,10 +95,31 @@
     max-width: 600px;
     margin: 0 auto;
   }
-  
+
+  .widgets-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .widget-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .widget-heading {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #555;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
   .widget-container {
     background-color: #f8f8f8;
-    
+
   }
   
   .booking-info {
@@ -114,11 +157,20 @@
     .booking-section {
       padding: 3rem 0;
     }
-    
+
     .booking-title {
       font-size: 2.2rem;
     }
-    
+
+    .widgets-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .widget-heading {
+      font-size: 1.5rem;
+    }
+
     .booking-info {
       flex-direction: column;
       gap: 1rem;

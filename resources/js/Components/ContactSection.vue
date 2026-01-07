@@ -14,66 +14,63 @@
                     {{ notification.message }}
                 </div>
 
-                <h1 class="contact-title">Nous contacter</h1>
-                
+                <h1 class="contact-title">{{ t.contact.title }}</h1>
+
                 <div class="contact-text">
-                    <p>
-                        Vous avez des questions, besoin de conseils ou souhaitez prendre rendez-vous ?
-                        Je suis à votre disposition pour répondre à toutes vos demandes.
-                    </p>
-                    
+                    <p>{{ t.contact.subtitle }}</p>
+
                     <a href="mailto:info@beeaesthetic.be" class="contact-email">info@beeaesthetic.be</a>
                 </div>
                 
                 <form @submit.prevent="handleSubmit" class="contact-form">
                     <div class="form-group-name">
                         <div class="form-field">
-                            <label for="prenom">Prénom</label>
-                            <input 
-                                type="text" 
-                                id="prenom" 
-                                v-model="formData.prenom" 
+                            <label for="prenom">{{ t.contact.first_name }}</label>
+                            <input
+                                type="text"
+                                id="prenom"
+                                v-model="formData.prenom"
                                 class="form-control"
                                 required
                             >
                         </div>
-                        
+
                         <div class="form-field">
-                            <label for="nom">Nom de famille</label>
-                            <input 
-                                type="text" 
-                                id="nom" 
-                                v-model="formData.nom" 
+                            <label for="nom">{{ t.contact.last_name }}</label>
+                            <input
+                                type="text"
+                                id="nom"
+                                v-model="formData.nom"
                                 class="form-control"
                                 required
                             >
                         </div>
                     </div>
-                    
+
                     <div class="form-field">
-                        <label for="email">E-mail <span class="required">(obligatoire)</span></label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            v-model="formData.email" 
-                            class="form-control" 
+                        <label for="email">{{ t.contact.email }} <span class="required">{{ t.contact.required }}</span></label>
+                        <input
+                            type="email"
+                            id="email"
+                            v-model="formData.email"
+                            class="form-control"
                             required
                         >
                     </div>
-                    
+
                     <div class="form-field">
-                        <label for="message">Message <span class="required">(obligatoire)</span></label>
-                        <textarea 
-                            id="message" 
-                            v-model="formData.message" 
-                            class="form-control" 
-                            rows="5" 
+                        <label for="message">{{ t.contact.message }} <span class="required">{{ t.contact.required }}</span></label>
+                        <textarea
+                            id="message"
+                            v-model="formData.message"
+                            class="form-control"
+                            rows="5"
                             required
                         ></textarea>
                     </div>
-                    
+
                     <div class="form-submit">
-                        <button type="submit" class="btn-submit">ENVOYER</button>
+                        <button type="submit" class="btn-submit">{{ t.contact.send }}</button>
                     </div>
                 </form>
             </div>
@@ -84,6 +81,9 @@
 <script setup>
 import { ref } from 'vue'
 import axios from 'axios'
+import { useTranslation } from '@/composables/useTranslation'
+
+const { t } = useTranslation()
 
 const formData = ref({
     prenom: '',
@@ -116,7 +116,7 @@ const handleSubmit = async () => {
         
         // Message de succès
         notification.value = {
-            message: 'Message envoyé avec succès !',
+            message: t.value.contact.success,
             type: 'success'
         }
         
@@ -132,7 +132,7 @@ const handleSubmit = async () => {
     } catch (error) {
         // Gestion des erreurs
         notification.value = {
-            message: 'Erreur lors de l\'envoi du message',
+            message: t.value.contact.error,
             type: 'error'
         }
         console.error(error);

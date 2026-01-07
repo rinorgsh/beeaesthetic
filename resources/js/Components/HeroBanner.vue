@@ -24,14 +24,17 @@
     
     <div class="hero-content">
       <h1 class="hero-title">BEE AESTHETIC</h1>
-      <p class="hero-subtitle">Your Nails, Your Signature</p>
-      <a href="/rendez-vous" class="cta-button">Rendez-vous</a>
+      <p class="hero-subtitle">{{ t.home.hero_subtitle }}</p>
+      <a href="/rendez-vous" class="cta-button">{{ t.home.hero_button }}</a>
     </div>
   </section>
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { useTranslation } from '@/composables/useTranslation';
+
+const { t } = useTranslation();
 
 // Configuration Cloudinary
 const CLOUDINARY_CONFIG = {

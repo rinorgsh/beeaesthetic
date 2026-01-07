@@ -2,40 +2,19 @@
   <section class="welcome-section">
     <div class="container">
       <div class="welcome-content">
-        <p class="welcome-text">
-          Bienvenue chez <span class="highlight">Bee Aesthetic</span>, votre destination beauté complète 
-          à Bruxelles. Forte de mes <span class="highlight">4 années d'expérience</span> dans le 
-          domaine de la beauté, je mets mon expertise à votre 
-          service pour sublimer votre apparence tout en préservant la santé naturelle 
-          de votre peau et de vos ongles.
-        </p>
-        
-        <p class="welcome-text">
-          Que ce soit pour des <span class="highlight">ongles impeccables</span> avec le BIAB, 
-          un <span class="highlight">regard intensifié</span> grâce au rehaussement de cils, 
-          une <span class="highlight">peau douce</span> avec nos épilations professionnelles, 
-          ou encore un <span class="highlight">soin du visage</span> relaxant et personnalisé, 
-          chaque rendez-vous est une expérience unique où chaque détail compte.
-        </p>
-        
-        <p class="welcome-text">
-          Je propose également des <span class="highlight">formations professionnelles</span> 
-          pour les futurs experts de l'onglerie qui souhaitent maîtriser les techniques du BIAB 
-          et développer leurs compétences.
-        </p>
-
-        <p class="welcome-text">
-          Avec <span class="highlight">Bee Aesthetic</span>, vous bénéficiez de 4 ans de savoir-faire, 
-          d'un soin attentif et personnalisé, et d'une gamme complète de services beauté. 
-          Prenez rendez-vous dès aujourd'hui et laissez votre beauté naturelle s'exprimer.
-        </p>
+        <p class="welcome-text" v-html="t.welcome.paragraph1"></p>
+        <p class="welcome-text" v-html="t.welcome.paragraph2"></p>
+        <p class="welcome-text" v-html="t.welcome.paragraph3"></p>
+        <p class="welcome-text" v-html="t.welcome.paragraph4"></p>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-// Aucune logique spécifique nécessaire
+import { useTranslation } from '@/composables/useTranslation'
+
+const { t } = useTranslation()
 </script>
 
 <style scoped>

@@ -2,8 +2,8 @@
   <section class="services-section">
     <!-- Hero Section -->
     <div class="services-hero">
-      <h1 class="hero-title">Nos Services</h1>
-      <p class="hero-subtitle">Une expérience beauté complète et sur-mesure</p>
+      <h1 class="hero-title">{{ t.services.hero_title }}</h1>
+      <p class="hero-subtitle">{{ t.services.hero_subtitle }}</p>
     </div>
 
     <!-- Navigation par catégories -->
@@ -21,8 +21,8 @@
     <!-- Pédicure -->
     <div v-show="activeCategory === 'pedicure'" class="category-section">
       <div class="category-header">
-        <h2 class="category-title">Pédicure</h2>
-        <p class="category-intro">Des pieds sublimés et chouchoutés</p>
+        <h2 class="category-title">{{ t.services.pedicure_title }}</h2>
+        <p class="category-intro">{{ t.services.pedicure_intro }}</p>
       </div>
 
       <div class="services-list">
@@ -33,7 +33,7 @@
           </div>
           <div class="service-pricing">
             <span class="service-price">{{ service.price }}</span>
-            <a href="/rendez-vous" class="service-btn-small">Réserver</a>
+            <a href="/rendez-vous" class="service-btn-small">{{ t.services.book_button }}</a>
           </div>
         </div>
       </div>
@@ -42,8 +42,8 @@
     <!-- Manucure -->
     <div v-show="activeCategory === 'manicure'" class="category-section">
       <div class="category-header">
-        <h2 class="category-title">Manucure</h2>
-        <p class="category-intro">Des mains soignées et élégantes</p>
+        <h2 class="category-title">{{ t.services.manicure_cat_title }}</h2>
+        <p class="category-intro">{{ t.services.manicure_intro }}</p>
       </div>
 
       <div class="services-list">
@@ -54,7 +54,7 @@
           </div>
           <div class="service-pricing">
             <span class="service-price">{{ service.price }}</span>
-            <a href="/rendez-vous" class="service-btn-small">Réserver</a>
+            <a href="/rendez-vous" class="service-btn-small">{{ t.services.book_button }}</a>
           </div>
         </div>
       </div>
@@ -63,8 +63,8 @@
     <!-- BIAB -->
     <div v-show="activeCategory === 'biab'" class="category-section">
       <div class="category-header">
-        <h2 class="category-title">BIAB - Builder in a Bottle</h2>
-        <p class="category-intro">Des ongles naturellement renforcés et sublimés</p>
+        <h2 class="category-title">{{ t.services.biab_title }}</h2>
+        <p class="category-intro">{{ t.services.biab_intro }}</p>
       </div>
 
       <div class="services-grid">
@@ -77,7 +77,7 @@
             <p class="service-card-price">{{ service.price }}</p>
             <p class="service-card-duration">{{ service.duration }}</p>
             <p class="service-card-description">{{ service.description }}</p>
-            <a href="/rendez-vous" class="service-card-button">Réserver</a>
+            <a href="/rendez-vous" class="service-card-button">{{ t.services.book_button }}</a>
           </div>
         </div>
       </div>
@@ -86,8 +86,8 @@
     <!-- Cils & Sourcils -->
     <div v-show="activeCategory === 'lashes'" class="category-section">
       <div class="category-header">
-        <h2 class="category-title">Rehaussement de Cils & Sourcils</h2>
-        <p class="category-intro">Un regard intensifié naturellement</p>
+        <h2 class="category-title">{{ t.services.lashes_cat_title }}</h2>
+        <p class="category-intro">{{ t.services.lashes_intro }}</p>
       </div>
 
       <div class="services-list">
@@ -98,7 +98,7 @@
           </div>
           <div class="service-pricing">
             <span class="service-price">{{ service.price }}</span>
-            <a href="/rendez-vous" class="service-btn-small">Réserver</a>
+            <a href="/rendez-vous" class="service-btn-small">{{ t.services.book_button }}</a>
           </div>
         </div>
       </div>
@@ -107,8 +107,8 @@
     <!-- Épilation -->
     <div v-show="activeCategory === 'epilation'" class="category-section">
       <div class="category-header">
-        <h2 class="category-title">Épilation à la Cire</h2>
-        <p class="category-intro">Une peau douce et lisse en toute douceur</p>
+        <h2 class="category-title">{{ t.services.waxing_cat_title }}</h2>
+        <p class="category-intro">{{ t.services.waxing_intro }}</p>
       </div>
 
       <!-- Sous-catégories d'épilation -->
@@ -123,7 +123,7 @@
               </div>
               <div class="service-pricing">
                 <span class="service-price">{{ service.price }}</span>
-                <a href="/rendez-vous" class="service-btn-small">Réserver</a>
+                <a href="/rendez-vous" class="service-btn-small">{{ t.services.book_button }}</a>
               </div>
             </div>
           </div>
@@ -134,30 +134,29 @@
     <!-- Soins du Visage -->
     <div v-show="activeCategory === 'facial'" class="category-section">
       <div class="category-header">
-        <h2 class="category-title">Soins du Visage</h2>
-        <p class="category-intro">Un moment de détente pour une peau éclatante</p>
+        <h2 class="category-title">{{ t.services.facial_cat_title }}</h2>
+        <p class="category-intro">{{ t.services.facial_intro }}</p>
       </div>
 
       <div class="facial-service-highlight">
         <div class="facial-content">
-          <h3 class="facial-title">Soin Visage Complet</h3>
+          <h3 class="facial-title">{{ t.services.facial_complete_title }}</h3>
           <p class="facial-price">60 €</p>
           <p class="facial-duration">1h30</p>
           <p class="facial-description">
-            Offrez-vous un moment de pure relaxation avec notre soin du visage sur-mesure. 
-            Un protocole complet adapté à votre type de peau pour un résultat visible et durable.
+            {{ t.services.facial_complete_desc }}
           </p>
           <ul class="facial-benefits">
-            <li>Nettoyage en profondeur</li>
-            <li>Gommage doux</li>
-            <li>Massage relaxant</li>
-            <li>Masque adapté</li>
-            <li>Hydratation intense</li>
+            <li>{{ t.services.facial_benefit_1 }}</li>
+            <li>{{ t.services.facial_benefit_2 }}</li>
+            <li>{{ t.services.facial_benefit_3 }}</li>
+            <li>{{ t.services.facial_benefit_4 }}</li>
+            <li>{{ t.services.facial_benefit_5 }}</li>
           </ul>
-          <a href="/rendez-vous" class="service-card-button">Réserver mon soin</a>
+          <a href="/rendez-vous" class="service-card-button">{{ t.services.book_facial }}</a>
         </div>
         <div class="facial-image">
-          <img src="/Images/skincare.jpg" alt="Soin du visage" class="img-fluid">
+          <img src="/Images/skincare.jpg" :alt="t.services.facial_cat_title" class="img-fluid">
         </div>
       </div>
     </div>
@@ -165,120 +164,123 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useTranslation } from '@/composables/useTranslation';
+
+const { t } = useTranslation();
 
 const activeCategory = ref('biab');
 
-const categories = [
-  { id: 'biab', name: 'BIAB' },
-  { id: 'manicure', name: 'Manucure' },
-  { id: 'pedicure', name: 'Pédicure' },
-  { id: 'lashes', name: 'Cils & Sourcils' },
-  { id: 'epilation', name: 'Épilation' },
-  { id: 'facial', name: 'Soins Visage' }
-];
+const categories = computed(() => [
+  { id: 'biab', name: t.value.services.cat_biab },
+  { id: 'manicure', name: t.value.services.cat_manicure },
+  { id: 'pedicure', name: t.value.services.cat_pedicure },
+  { id: 'lashes', name: t.value.services.cat_lashes },
+  { id: 'epilation', name: t.value.services.cat_epilation },
+  { id: 'facial', name: t.value.services.cat_facial }
+]);
 
-const pedicureServices = [
-  { name: 'Pédicure Classique', price: '60 €', duration: '90 min' },
-  { name: 'Japanese Pedicure', price: '60 €', duration: '90 min' }
-];
+const pedicureServices = computed(() => [
+  { name: t.value.services.pedicure_classic, price: '60 €', duration: '90 min' },
+  { name: t.value.services.pedicure_japanese, price: '60 €', duration: '90 min' }
+]);
 
-const manicureServices = [
-  { name: 'Gel/BIAB Removal', price: '10 €', duration: '20 min' },
-  { name: 'Manucure Classique', price: '40 €', duration: '60 min' },
-  { name: 'Japanese Manicure', price: '55 €', duration: '60 min' }
-];
+const manicureServices = computed(() => [
+  { name: t.value.services.gel_removal, price: '10 €', duration: '20 min' },
+  { name: t.value.services.manicure_classic, price: '40 €', duration: '60 min' },
+  { name: t.value.services.japanese_manicure, price: '55 €', duration: '60 min' }
+]);
 
-const biabServices = [
+const biabServices = computed(() => [
   {
-    title: 'BIAB Simple',
+    title: t.value.services.biab_simple_title,
     price: '70 €',
     duration: '90 min',
-    description: 'Avant un traitement BIAB, une manucure russe est réalisée, comprenant le nettoyage des cuticules, le limage des ongles et l\'application du gel fortifiant BIAB.',
+    description: t.value.services.biab_simple_desc,
     image: '/Images/manicure.jpeg'
   },
   {
-    title: 'BIAB + Color',
+    title: t.value.services.biab_color_title,
     price: '75 €',
     duration: '105 min',
-    description: 'Disponible dans une gamme de couleurs, le BIAB peut être utilisé seul ou comme base pour un vernis semi-permanent.',
+    description: t.value.services.biab_color_desc,
     image: '/Images/manicure3.jpeg'
   },
   {
-    title: 'BIAB + French',
+    title: t.value.services.biab_french_title,
     price: '75 €',
     duration: '105 min',
-    description: 'Obtenez un look parfait et raffiné avec une french de la couleur de votre choix.',
+    description: t.value.services.biab_french_desc,
     image: '/Images/manicure5.jpeg'
   },
   {
-    title: 'BIAB + Effect',
+    title: t.value.services.biab_effect_title,
     price: '75 €',
     duration: '110 min',
-    description: 'Ajoutez une touche d\'originalité avec des effets spéciaux sur votre BIAB.',
+    description: t.value.services.biab_effect_desc,
     image: '/Images/manicure4.jpg'
   },
   {
-    title: 'BIAB + French + Effect',
+    title: t.value.services.biab_french_effect_title,
     price: '85 €',
     duration: '110 min',
-    description: 'La combinaison parfaite : french et effets spéciaux pour des ongles uniques.',
+    description: t.value.services.biab_french_effect_desc,
     image: '/Images/manicure4.jpg'
   },
   {
-    title: 'BIAB + Color + Effect',
+    title: t.value.services.biab_color_effect_title,
     price: '85 €',
     duration: '110 min',
-    description: 'Couleur et effets pour une manucure personnalisée et créative.',
+    description: t.value.services.biab_color_effect_desc,
     image: '/Images/manicure4.jpg'
   }
-];
+]);
 
-const lashesServices = [
-  { name: 'Rehaussement de cils / Lash Lift', price: '55 €', duration: '50 min' },
-  { name: 'Brow Lift', price: '55 €', duration: '60 min' },
-  { name: 'Restructuration', price: '25 €', duration: '50 min' },
-  { name: 'Duvet', price: '5 €', duration: '-' }
-];
+const lashesServices = computed(() => [
+  { name: t.value.services.lash_lift, price: '55 €', duration: '50 min' },
+  { name: t.value.services.brow_lift, price: '55 €', duration: '60 min' },
+  { name: t.value.services.restructuration, price: '25 €', duration: '50 min' },
+  { name: t.value.services.duvet, price: '5 €', duration: '-' }
+]);
 
-const epilationCategories = {
+const epilationCategories = computed(() => ({
   visage: {
-    title: 'Visage',
+    title: t.value.services.waxing_face,
     services: [
-      { name: 'Épilation Favoris', price: '10 €', duration: '-' },
-      { name: 'Épilation Menton', price: '10 €', duration: '-' }
+      { name: t.value.services.waxing_sideburns, price: '10 €', duration: '-' },
+      { name: t.value.services.waxing_chin, price: '10 €', duration: '-' }
     ]
   },
   corps: {
-    title: 'Corps',
+    title: t.value.services.waxing_body,
     services: [
-      { name: 'Épilation Épaule', price: '20 €', duration: '30 min' },
-      { name: 'Épilation Bras Complet', price: '25 €', duration: '35 min' },
-      { name: 'Épilation 1/2 Bras', price: '15 €', duration: '20 min' },
-      { name: 'Épilation Aisselles', price: '15 €', duration: '15 min' },
-      { name: 'Épilation Torse', price: '30 €', duration: '35 min' },
-      { name: 'Épilation Dos', price: '30 €', duration: '35 min' },
-      { name: 'Sillon Inter Fessier', price: '5 €', duration: '-' }
+      { name: t.value.services.waxing_shoulder, price: '20 €', duration: '30 min' },
+      { name: t.value.services.waxing_full_arms, price: '25 €', duration: '35 min' },
+      { name: t.value.services.waxing_half_arms, price: '15 €', duration: '20 min' },
+      { name: t.value.services.waxing_armpits, price: '15 €', duration: '15 min' },
+      { name: t.value.services.waxing_chest, price: '30 €', duration: '35 min' },
+      { name: t.value.services.waxing_back, price: '30 €', duration: '35 min' },
+      { name: t.value.services.waxing_inter_glute, price: '5 €', duration: '-' }
     ]
   },
   jambes: {
-    title: 'Jambes',
+    title: t.value.services.waxing_legs,
     services: [
-      { name: 'Épilation Jambes Complète', price: '30 €', duration: '40 min' },
-      { name: 'Épilation 3/4 Jambe', price: '25 €', duration: '30 min' },
-      { name: 'Épilation 1/2 Jambe', price: '20 €', duration: '30 min' }
+      { name: t.value.services.waxing_full_legs, price: '30 €', duration: '40 min' },
+      { name: t.value.services.waxing_3_4_legs, price: '25 €', duration: '30 min' },
+      { name: t.value.services.waxing_half_legs, price: '20 €', duration: '30 min' }
     ]
   },
   bikini: {
-    title: 'Maillot',
+    title: t.value.services.waxing_bikini,
     services: [
-      { name: 'Bikini Classic', price: '15 €', duration: '20 min' },
-      { name: 'Bikini Échancré', price: '20 €', duration: '25 min' },
-      { name: 'Bikini Brésilien', price: '25 €', duration: '25 min' },
-      { name: 'Bikini Intégral', price: '30 €', duration: '40 min' }
+      { name: t.value.services.bikini_classic, price: '15 €', duration: '20 min' },
+      { name: t.value.services.bikini_extended, price: '20 €', duration: '25 min' },
+      { name: t.value.services.bikini_brazilian, price: '25 €', duration: '25 min' },
+      { name: t.value.services.bikini_full, price: '30 €', duration: '40 min' }
     ]
   }
-};
+}));
 </script>
 
 <style scoped>
