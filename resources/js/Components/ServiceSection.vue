@@ -1,92 +1,65 @@
 <template>
   <section class="services-section">
-    <!-- Titre de la section -->
-    <div class="section-title-container">
-      <h2 class="section-title">{{ t.services.title }}</h2>
-    </div>
-    
-    <!-- Contenu des services -->
-    <div class="services-container">
-      <div class="row">
-        <!-- Manucure, Pédicure & BIAB -->
-        <div class="col-lg-6 col-md-6 service-col">
-          <div class="service-content">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">{{ t.services.section_title }}</h2>
+        <div class="separator"><span></span></div>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1: Manucure/BIAB -->
+        <div class="service-card">
+          <div class="service-image-wrapper">
             <div class="service-image">
-              <img src="Images/service2.jpeg" :alt="t.services.manicure_title" class="img-fluid">
+              <img src="/Images/manicure.jpeg" :alt="t.services.manicure_title">
             </div>
+          </div>
+          <div class="service-content">
             <h3 class="service-title">{{ t.services.manicure_title }}</h3>
-            <p class="service-description">
-              {{ t.services.manicure_desc }}
-            </p>
-            <div class="service-btn-container">
-              <a href="/services" class="service-btn">{{ t.services.discover }}</a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Cils & Sourcils -->
-        <div class="col-lg-6 col-md-6 service-col">
-          <div class="service-content">
-            <div class="service-image service-image-alt">
-              <img src="Images/cils.jpg" :alt="t.services.lashes_title" class="img-fluid">
-            </div>
-            <h3 class="service-title">{{ t.services.lashes_title }}</h3>
-            <p class="service-description">
-              {{ t.services.lashes_desc }}
-            </p>
-            <div class="service-btn-container">
-              <a href="/services" class="service-btn">{{ t.services.discover }}</a>
-            </div>
+            <p class="service-description">{{ t.services.manicure_desc }}</p>
+            <a href="/services" class="service-link">{{ t.services.discover }}</a>
           </div>
         </div>
 
-        <!-- Épilation -->
-        <div class="col-lg-6 col-md-6 service-col">
-          <div class="service-content">
+        <!-- Service 2: Cils & Sourcils -->
+        <div class="service-card">
+          <div class="service-image-wrapper">
             <div class="service-image">
-              <img src="Images/epi.jpg" :alt="t.services.waxing_title" class="img-fluid">
+              <img src="/Images/cils.jpg" :alt="t.services.lashes_title">
             </div>
-            <h3 class="service-title">{{ t.services.waxing_title }}</h3>
-            <p class="service-description">
-              {{ t.services.waxing_desc }}
-            </p>
-            <div class="service-btn-container">
-              <a href="/services" class="service-btn">{{ t.services.discover }}</a>
-            </div>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">{{ t.services.lashes_title }}</h3>
+            <p class="service-description">{{ t.services.lashes_desc }}</p>
+            <a href="/services" class="service-link">{{ t.services.discover }}</a>
           </div>
         </div>
 
-        <!-- Soins du Visage -->
-        <div class="col-lg-6 col-md-6 service-col">
-          <div class="service-content">
-            <div class="service-image service-image-alt">
-              <img src="Images/soin.jpg" :alt="t.services.facial_title" class="img-fluid">
-            </div>
-            <h3 class="service-title">{{ t.services.facial_title }}</h3>
-            <p class="service-description">
-              {{ t.services.facial_desc }}
-            </p>
-            <div class="service-btn-container">
-              <a href="/services" class="service-btn">{{ t.services.discover }}</a>
+        <!-- Service 3: Épilation -->
+        <div class="service-card">
+          <div class="service-image-wrapper">
+            <div class="service-image">
+              <img src="/Images/epi.jpg" :alt="t.services.waxing_title">
             </div>
           </div>
+          <div class="service-content">
+            <h3 class="service-title">{{ t.services.waxing_title }}</h3>
+            <p class="service-description">{{ t.services.waxing_desc }}</p>
+            <a href="/services" class="service-link">{{ t.services.discover }}</a>
+          </div>
         </div>
-        
-        <!-- Formation -->
-        <div class="col-lg-12 service-col service-col-full">
-          <div class="service-content service-content-horizontal">
-            <div class="service-image-horizontal">
-              <img src="Images/service.jpeg" :alt="t.services.training_title" class="img-fluid">
+
+        <!-- Service 4: Soins du Visage -->
+        <div class="service-card">
+          <div class="service-image-wrapper">
+            <div class="service-image">
+              <img src="/Images/soin.jpg" :alt="t.services.facial_title">
             </div>
-            <div class="service-text-horizontal">
-              <h3 class="service-title">{{ t.services.training_title }}</h3>
-              <p class="service-description">
-                {{ t.services.training_desc }}
-              </p>
-              <div class="service-btn-container">
-                <a href="/formation" class="service-btn">{{ t.services.learn_more }}</a>
-              </div>
-            </div>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">{{ t.services.facial_title }}</h3>
+            <p class="service-description">{{ t.services.facial_desc }}</p>
+            <a href="/services" class="service-link">{{ t.services.discover }}</a>
           </div>
         </div>
       </div>
@@ -102,241 +75,256 @@ const { t } = useTranslation()
 
 <style scoped>
 .services-section {
-  padding: 3rem 0 5rem;
-  background-color: #f8f8f8;
+  padding: 6rem 0;
+  background-color: #fff;
   font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
 }
 
-.section-title-container {
-  padding: 1rem 2rem 3rem;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
 }
 
 .section-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 300;
-  color: #555;
-  letter-spacing: 1px;
-  margin-left: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
-.services-container {
-  max-width: 1200px;
+.separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.separator span {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background-color: #b3a090;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem 3rem;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
-.service-col {
-  padding: 1rem 2rem;
-  margin-bottom: 2rem;
-}
-
-.service-col-full {
-  margin-top: 2rem;
-}
-
-.service-content {
+.service-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
-}
-
-/* Service horizontal (Formation) */
-.service-content-horizontal {
-  flex-direction: row;
   align-items: center;
-  gap: 3rem;
-  padding: 3rem;
-  background: transparent;     
-  padding: 3rem 0;
+  text-align: center;
 }
 
-.service-image-horizontal {
-  flex: 0 0 300px;
+/* Image en forme de poire/goutte élégante */
+.service-image-wrapper {
+  width: 280px;
+  height: 320px;
+  margin-bottom: 2rem;
   position: relative;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  overflow: hidden;
 }
 
-.service-image-horizontal img {
+.service-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.service-image-horizontal:hover img {
-  transform: scale(1.05);
-}
-
-.service-text-horizontal {
-  flex: 1;
-}
-
-/* Images des services réguliers */
-.service-image {
-  margin-bottom: 2rem;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  width: 100%;
-  padding-top: 100%;
-  border-radius: 70% 30% 30% 70% / 40% 50% 50% 60%;
 }
 
-.service-image-alt {
-  border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
-}
-
-.service-image img {
+.service-image::after {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-.service-image:hover img {
-  transform: scale(1.03);
+.service-card:hover .service-image {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(179, 160, 144, 0.3);
+  border-radius: 50% 50% 50% 50% / 55% 55% 45% 45%;
+}
+
+.service-card:hover .service-image::after {
+  opacity: 1;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.08);
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
 }
 
 .service-title {
-  font-size: 1.8rem;
-  font-weight: 300;
-  color: #b3a090;
-  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 1rem;
   letter-spacing: 0.5px;
 }
 
 .service-description {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 1.8rem;
+  max-width: 320px;
   flex-grow: 1;
 }
 
-.service-btn-container {
-  margin-top: auto;
-}
-
-.service-btn {
+.service-link {
   display: inline-block;
-  padding: 0.8rem 2rem;
-  border: 1px solid #999;
-  border-radius: 50px;
-  color: #555;
+  padding: 12px 40px;
+  background-color: #e6cfc2;
+  color: #333;
   text-decoration: none;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s;
 }
 
-.service-btn:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+.service-link:hover {
+  background-color: #dbbcab;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 207, 194, 0.4);
 }
 
-/* Limite la taille maximale des images sur desktop */
-@media (min-width: 992px) {
-  .service-image {
-    max-width: 320px;
-    padding-top: 320px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-/* Tablettes */
-@media (min-width: 768px) and (max-width: 991px) {
-  .service-image {
-    max-width: 280px;
-    padding-top: 280px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .service-content-horizontal {
-    flex-direction: column;
-    gap: 2rem;
-    text-align: center;
-  }
-
-  .service-image-horizontal {
-    flex: 0 0 250px;
-    width: 250px;
-    height: 250px;
-  }
-}
-
+/* Responsive */
 @media (max-width: 991px) {
-  .section-title {
-    font-size: 2.5rem;
-    margin-left: 1rem;
+  .services-section {
+    padding: 4rem 0;
   }
-  
-  .service-col {
-    padding: 1rem;
+
+  .section-header {
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .services-grid {
+    gap: 3.5rem 2.5rem;
+  }
+
+  .service-image-wrapper {
+    width: 240px;
+    height: 280px;
+  }
+
+  .service-title {
+    font-size: 1.3rem;
+  }
+
+  .service-description {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 767px) {
-  .section-title-container {
-    padding: 1rem 1rem 2rem;
+  .services-section {
+    padding: 3rem 0;
   }
-  
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
   .section-title {
-    font-size: 2rem;
-    margin-left: 0.5rem;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
   }
-  
-  .service-title {
-    font-size: 1.5rem;
+
+  .services-grid {
+    gap: 3rem 1.5rem;
   }
-  
-  .service-btn {
+
+  .service-image-wrapper {
     width: 100%;
-    text-align: center;
+    max-width: 200px;
+    height: 240px;
   }
 
-  .service-content-horizontal {
-    flex-direction: column;
-    padding: 2rem 1.5rem;
-    gap: 2rem;
-    text-align: center;
+  .service-title {
+    font-size: 1.2rem;
   }
 
-  .service-image-horizontal {
-    flex: 0 0 200px;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
+  .service-description {
+    font-size: 0.85rem;
+    max-width: 100%;
+    line-height: 1.6;
   }
 
-  .service-image {
-    max-width: 280px;
-    padding-top: 280px;
-    margin-left: auto;
-    margin-right: auto;
+  .service-link {
+    font-size: 0.75rem;
+    padding: 10px 30px;
   }
 }
 
 @media (max-width: 480px) {
-  .service-image {
-    max-width: 250px;
-    padding-top: 250px;
+  .section-title {
+    font-size: 1.5rem;
   }
 
-  .service-content-horizontal {
-    padding: 1.5rem 1rem;
+  .services-grid {
+    gap: 2.5rem 1rem;
   }
 
-  .service-image-horizontal {
-    flex: 0 0 180px;
-    width: 180px;
-    height: 180px;
+  .service-image-wrapper {
+    max-width: 160px;
+    height: 200px;
+  }
+
+  .service-title {
+    font-size: 1.1rem;
+  }
+
+  .service-description {
+    font-size: 0.8rem;
+  }
+
+  .service-link {
+    font-size: 0.7rem;
+    padding: 8px 25px;
   }
 }
 </style>

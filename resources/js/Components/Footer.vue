@@ -69,6 +69,120 @@
                         {{ t.faq.q4_answer }}<br>
                         <a href="mailto:info@beeaesthetic.be" class="footer-link">info@beeaesthetic.be</a>
                     </p>
+
+                    <!-- FAQ LASER -->
+                    <h2 class="faq-section-title">{{ t.faq.laser_section_title }}</h2>
+
+                    <h3>{{ t.faq.laser_q1 }}</h3>
+                    <p>{{ t.faq.laser_a1 }}</p>
+
+                    <h3>{{ t.faq.laser_q2 }}</h3>
+                    <p>{{ t.faq.laser_a2 }}</p>
+
+                    <h3>{{ t.faq.laser_q3 }}</h3>
+                    <p>{{ t.faq.laser_a3 }}</p>
+
+                    <h3>{{ t.faq.laser_q4 }}</h3>
+                    <p>{{ t.faq.laser_a4 }}</p>
+
+                    <h3>{{ t.faq.laser_q5 }}</h3>
+                    <p>{{ t.faq.laser_a5 }}</p>
+
+                    <h3>{{ t.faq.laser_q6 }}</h3>
+                    <p>{{ t.faq.laser_a6 }}</p>
+
+                    <h3>{{ t.faq.laser_q7 }}</h3>
+                    <p>{{ t.faq.laser_a7 }}</p>
+
+                    <h3>{{ t.faq.laser_q8 }}</h3>
+                    <p>{{ t.faq.laser_a8 }}</p>
+
+                    <h3>{{ t.faq.laser_q9 }}</h3>
+                    <p>{{ t.faq.laser_a9 }}</p>
+
+                    <h3>{{ t.faq.laser_q10 }}</h3>
+                    <p>{{ t.faq.laser_a10 }}</p>
+
+                    <h3>{{ t.faq.laser_q11 }}</h3>
+                    <p>{{ t.faq.laser_a11 }}</p>
+
+                    <h3>{{ t.faq.laser_q12 }}</h3>
+                    <p>{{ t.faq.laser_a12 }}</p>
+
+                    <h3>{{ t.faq.laser_q13 }}</h3>
+                    <p>{{ t.faq.laser_a13 }}</p>
+
+                    <h3>{{ t.faq.laser_q14 }}</h3>
+                    <p>{{ t.faq.laser_a14 }}</p>
+
+                    <h3>{{ t.faq.laser_q15 }}</h3>
+                    <p>{{ t.faq.laser_a15 }}</p>
+
+                    <p class="faq-warning">{{ t.faq.laser_warning }}</p>
+
+                    <!-- FAQ BROW LIFT -->
+                    <h2 class="faq-section-title">{{ t.faq.browlift_section_title }}</h2>
+
+                    <h3>{{ t.faq.browlift_q1 }}</h3>
+                    <p>{{ t.faq.browlift_a1 }}</p>
+
+                    <h3>{{ t.faq.browlift_q2 }}</h3>
+                    <p>{{ t.faq.browlift_a2 }}</p>
+
+                    <h3>{{ t.faq.browlift_q3 }}</h3>
+                    <p>{{ t.faq.browlift_a3 }}</p>
+
+                    <h3>{{ t.faq.browlift_q4 }}</h3>
+                    <p>{{ t.faq.browlift_a4 }}</p>
+
+                    <h3>{{ t.faq.browlift_q5 }}</h3>
+                    <p>{{ t.faq.browlift_a5 }}</p>
+
+                    <h3>{{ t.faq.browlift_q6 }}</h3>
+                    <p>{{ t.faq.browlift_a6 }}</p>
+
+                    <h3>{{ t.faq.browlift_q7 }}</h3>
+                    <p>{{ t.faq.browlift_a7 }}</p>
+
+                    <h3>{{ t.faq.browlift_q8 }}</h3>
+                    <p>{{ t.faq.browlift_a8 }}</p>
+
+                    <h3>{{ t.faq.browlift_q9 }}</h3>
+                    <p>{{ t.faq.browlift_a9 }}</p>
+
+                    <p class="faq-warning">{{ t.faq.browlift_warning }}</p>
+
+                    <!-- FAQ LASH LIFT -->
+                    <h2 class="faq-section-title">{{ t.faq.lashlift_section_title }}</h2>
+
+                    <h3>{{ t.faq.lashlift_q1 }}</h3>
+                    <p>{{ t.faq.lashlift_a1 }}</p>
+
+                    <h3>{{ t.faq.lashlift_q2 }}</h3>
+                    <p>{{ t.faq.lashlift_a2 }}</p>
+
+                    <h3>{{ t.faq.lashlift_q3 }}</h3>
+                    <p>{{ t.faq.lashlift_a3 }}</p>
+
+                    <h3>{{ t.faq.lashlift_q4 }}</h3>
+                    <p>{{ t.faq.lashlift_a4 }}</p>
+
+                    <h3>{{ t.faq.lashlift_q5 }}</h3>
+                    <p>{{ t.faq.lashlift_a5 }}</p>
+
+                    <h3>{{ t.faq.lashlift_q6 }}</h3>
+                    <p>{{ t.faq.lashlift_a6 }}</p>
+
+                    <h3>{{ t.faq.lashlift_q7 }}</h3>
+                    <p>{{ t.faq.lashlift_a7 }}</p>
+
+                    <h3>{{ t.faq.lashlift_q8 }}</h3>
+                    <p>{{ t.faq.lashlift_a8 }}</p>
+
+                    <h3>{{ t.faq.lashlift_q9 }}</h3>
+                    <p>{{ t.faq.lashlift_a9 }}</p>
+
+                    <p class="faq-warning">{{ t.faq.lashlift_warning }}</p>
                 </div>
             </div>
         </div>

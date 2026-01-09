@@ -27,6 +27,10 @@
               <span :data-hover="t.nav.services">{{ t.nav.services }}</span>
             </a>
 
+            <a href="/prix" class="nav-link px-3">
+              <span :data-hover="t.nav.prices">{{ t.nav.prices }}</span>
+            </a>
+
             <a href="/formation" class="nav-link px-3">
               <span :data-hover="t.nav.formation">{{ t.nav.formation }}</span>
             </a>
@@ -35,17 +39,17 @@
               <span :data-hover="t.nav.boutique">{{ t.nav.boutique }}</span>
             </a>
 
-            <a href="/gallerie" class="nav-link px-3">
+            <!-- <a href="/gallerie" class="nav-link px-3">
               <span :data-hover="t.nav.gallery">{{ t.nav.gallery }}</span>
-            </a>
+            </a> -->
 
             <a href="/reviews" class="nav-link px-3">
               <span :data-hover="t.nav.reviews">{{ t.nav.reviews }}</span>
             </a>
 
-            <a href="/a-propos" class="nav-link px-3">
+            <!-- <a href="/a-propos" class="nav-link px-3">
               <span :data-hover="t.nav.about">{{ t.nav.about }}</span>
-            </a>
+            </a> -->
 
             <a href="/contact" class="nav-link px-3">
               <span :data-hover="t.nav.contact">{{ t.nav.contact }}</span>
@@ -109,11 +113,12 @@
         <div class="mobile-nav-links">
           <a href="/" class="mobile-nav-link">{{ t.nav.home }}</a>
           <a href="/services" class="mobile-nav-link">{{ t.nav.services }}</a>
+          <a href="/prix" class="mobile-nav-link">{{ t.nav.prices }}</a>
           <a href="/formation" class="mobile-nav-link">{{ t.nav.formation }}</a>
           <a href="/shop" class="mobile-nav-link">{{ t.nav.boutique }}</a>
-          <a href="/gallerie" class="mobile-nav-link">{{ t.nav.gallery }}</a>
+          <!-- <a href="/gallerie" class="mobile-nav-link">{{ t.nav.gallery }}</a> -->
           <a href="/reviews" class="mobile-nav-link">{{ t.nav.reviews }}</a>
-          <a href="/a-propos" class="mobile-nav-link">{{ t.nav.about }}</a>
+          <!-- <a href="/a-propos" class="mobile-nav-link">{{ t.nav.about }}</a> -->
           <a href="/contact" class="mobile-nav-link">{{ t.nav.contact }}</a>
 
           <!-- Localisation mobile -->
@@ -306,8 +311,8 @@ const { t, currentLanguage, changeLanguage } = useTranslation();
 }
 
 .btn-rendez-vous {
-  background-color: #000;
-  color: #fff;
+  background-color: #e6cfc2;
+  color: #333;
   text-decoration: none;
   border-radius: 30px;
   font-size: 0.85rem;
@@ -319,9 +324,9 @@ const { t, currentLanguage, changeLanguage } = useTranslation();
 }
 
 .btn-rendez-vous:hover {
-  background-color: #222;
+  background-color: #dbbcab;
   transform: translateY(-1px);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(230, 207, 194, 0.3);
 }
 
 /* Styles pour le menu hamburger */
@@ -410,8 +415,8 @@ const { t, currentLanguage, changeLanguage } = useTranslation();
 }
 
 .mobile-btn-rendez-vous {
-  background-color: #000;
-  color: #fff;
+  background-color: #e6cfc2;
+  color: #333;
   text-decoration: none;
   border-radius: 30px;
   font-size: 0.9rem;
@@ -422,6 +427,10 @@ const { t, currentLanguage, changeLanguage } = useTranslation();
   margin-top: 10px;
   display: inline-block;
   text-align: center;
+}
+
+.mobile-btn-rendez-vous:hover {
+  background-color: #dbbcab;
 }
 
 /* Sélecteur de langue desktop */

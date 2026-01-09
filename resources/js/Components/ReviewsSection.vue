@@ -1,11 +1,14 @@
 <template>
+    <!-- Hero Section -->
+    <section class="reviews-hero">
+      <div class="container">
+        <h1 class="hero-title">{{ t.reviews.title }}</h1>
+        <p class="hero-subtitle">{{ t.reviews.subtitle }}</p>
+      </div>
+    </section>
+
     <section class="reviews-section">
       <div class="container">
-        <!-- En-tête de la section -->
-        <div class="reviews-header">
-          <h2 class="reviews-title">{{ t.reviews.title }}</h2>
-          <p class="reviews-subtitle">{{ t.reviews.subtitle }}</p>
-        </div>
         
         <!-- Widget Google Reviews (Elfsight ou autre) -->
         <div class="reviews-widget-container">
@@ -178,38 +181,41 @@ const loadSalonizedWidget = () => {
     margin-bottom: 1.5rem;
   }
 }
+  /* Hero Section */
+  .reviews-hero {
+    padding: 4rem 0 2.5rem;
+    background-color: #f5e6db;
+    font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #333;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
   .reviews-section {
     padding: 5rem 0;
     background-color: #f8f8f8;
     font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
   }
-  
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
-  }
-  
-  .reviews-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  
-  .reviews-title {
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: #555;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
-  }
-  
-  .reviews-subtitle {
-    font-size: 1.1rem;
-    color: #888;
-    font-weight: 300;
-    max-width: 600px;
-    margin: 0 auto;
-    letter-spacing: 0.5px;
   }
   
   .reviews-widget-container {

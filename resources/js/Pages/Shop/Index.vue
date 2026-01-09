@@ -192,7 +192,7 @@ const addToCart = (product) => {
 /* Hero Section */
 .shop-hero {
   padding: 4rem 0 2.5rem;
-  background-color: #f8f8f8;
+  background-color: #f5e6db;
   font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
   text-align: center;
 }
@@ -206,7 +206,7 @@ const addToCart = (product) => {
 .hero-title {
   font-size: 3rem;
   font-weight: 300;
-  color: #555;
+  color: #333;
   letter-spacing: 1px;
   margin-bottom: 0.8rem;
 }
@@ -214,7 +214,7 @@ const addToCart = (product) => {
 .hero-subtitle {
   font-size: 1rem;
   font-weight: 300;
-  color: #777;
+  color: #555;
   line-height: 1.8;
   max-width: 600px;
   margin: 0 auto;
@@ -302,7 +302,7 @@ const addToCart = (product) => {
 .btn-add-cart {
   flex: 1;
   padding: 0.85rem 1rem;
-  background: #333;
+  background: #b3a090;
   color: white;
   border: none;
   border-radius: 50px;
@@ -318,16 +318,16 @@ const addToCart = (product) => {
 }
 
 .btn-add-cart:hover {
-  background: #000;
+  background: #9a8778;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(179, 160, 144, 0.3);
 }
 
 .btn-details {
   padding: 0.85rem 1.2rem;
-  border: 1px solid #999;
+  border: 1px solid #e6cfc2;
   border-radius: 50px;
-  color: #555;
+  color: #b3a090;
   text-decoration: none;
   font-size: 0.85rem;
   letter-spacing: 0.5px;
@@ -337,8 +337,9 @@ const addToCart = (product) => {
 }
 
 .btn-details:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  border-color: #666;
+  background-color: #e6cfc2;
+  border-color: #b3a090;
+  color: #fff;
 }
 
 /* Responsive */

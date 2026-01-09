@@ -1,56 +1,27 @@
 <template>
-    <section class="formation-banner">
-      <div class="formation-overlay"></div>
-      <div class="formation-content">
-        <h2 class="formation-title">{{ t.formation.banner_title }}</h2>
-        <div class="formation-button-container">
-          <a href="/contact" class="formation-button">{{ t.formation.banner_button }}</a>
-        </div>
+    <!-- Hero Section -->
+    <section class="formation-hero">
+      <div class="container">
+        <h1 class="hero-title">{{ t.formation.page_title }}</h1>
+        <p class="hero-subtitle">{{ t.formation.page_subtitle }}</p>
       </div>
     </section>
-    
-    <section class="formation-details">
+
+    <section class="formation-content-section">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-8 offset-lg-2">
-            <div class="formation-description">
-              <h3 class="details-title">{{ t.formation.details_title }}</h3>
+        <div class="content-block">
+          <h2 class="section-title">{{ t.formation.training_title }}</h2>
+          <div class="section-text" v-html="t.formation.training_content"></div>
+          <div class="button-container">
+            <a href="/contact" class="contact-button">{{ t.formation.contact_button }}</a>
+          </div>
+        </div>
 
-              <p class="details-text">
-                {{ t.formation.details_intro }}
-              </p>
-
-              <div class="details-features">
-                <div class="feature">
-                  <h4 class="feature-title">{{ t.formation.feature1_title }}</h4>
-                  <p class="feature-text">
-                    {{ t.formation.feature1_text }}
-                  </p>
-                </div>
-
-                <div class="feature">
-                  <h4 class="feature-title">{{ t.formation.feature2_title }}</h4>
-                  <p class="feature-text">
-                    {{ t.formation.feature2_text }}
-                  </p>
-                </div>
-
-                <div class="feature">
-                  <h4 class="feature-title">{{ t.formation.feature3_title }}</h4>
-                  <p class="feature-text">
-                    {{ t.formation.feature3_text }}
-                  </p>
-                </div>
-              </div>
-
-              <p class="details-conclusion">
-                {{ t.formation.details_conclusion }}
-              </p>
-
-              <div class="details-button-container">
-                <!--<a href="/formations" class="details-button">Découvrir notre programme</a>-->
-              </div>
-            </div>
+        <div class="content-block">
+          <h2 class="section-title">{{ t.formation.ebook_title }}</h2>
+          <div class="section-text" v-html="t.formation.ebook_content"></div>
+          <div class="button-container">
+            <a href="/shop" class="contact-button">{{ t.formation.shop_button }}</a>
           </div>
         </div>
       </div>
@@ -64,189 +35,164 @@
   </script>
   
   <style scoped>
-  .formation-banner {
-    position: relative;
-    width: 100%;
-    height: 70vh;
-    min-height: 400px;
-    max-height: 600px;
-    background-image: url('@/../../public/Images/formation.jpeg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    overflow: hidden;
-  }
-  
-  .formation-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-  
-  .formation-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 0 2rem;
-    max-width: 900px;
-  }
-  
-  .formation-title {
+  /* Hero Section */
+  .formation-hero {
+    padding: 4rem 0 2.5rem;
+    background-color: #f5e6db;
     font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
+    text-align: center;
+  }
+
+  .hero-title {
     font-size: 3rem;
     font-weight: 300;
-    letter-spacing: 1px;
-    line-height: 1.3;
-    margin-bottom: 2.5rem;
-  }
-  
-  .formation-button-container {
-    margin-top: 2rem;
-  }
-  
-  .formation-button {
-    display: inline-block;
-    background-color: #e6cfc2;
     color: #333;
-    text-decoration: none;
-    padding: 1rem 3rem;
-    border-radius: 50px;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-subtitle {
     font-size: 1rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
   }
-  
-  .formation-button:hover {
-    background-color: #dbbcab;
-    transform: translateY(-2px);
-  }
-  
-  /* Section des détails de la formation */
-  .formation-details {
+
+  /* Content Section */
+  .formation-content-section {
     padding: 5rem 0;
     background-color: #f8f8f8;
     font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
   }
-  
-  .formation-description {
-    text-align: center;
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
   }
-  
-  .details-title {
+
+  .content-block {
+    margin-bottom: 5rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #e6cfc2;
+  }
+
+  .content-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .section-title {
     font-size: 2rem;
-    font-weight: 300;
-    color: #333;
-    margin-bottom: 2rem;
-    letter-spacing: 0.5px;
-  }
-  
-  .details-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 3rem;
-  }
-  
-  .details-features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 3rem;
-  }
-  
-  .feature {
-    flex: 0 0 30%;
-    margin-bottom: 2rem;
-  }
-  
-  .feature-title {
-    font-size: 1.3rem;
     font-weight: 400;
     color: #b3a090;
-    margin-bottom: 1rem;
-    letter-spacing: 0.3px;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+    text-align: center;
   }
-  
-  .feature-text {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #666;
-  }
-  
-  .details-conclusion {
-    font-size: 1.1rem;
-    line-height: 1.8;
+
+  .section-text {
+    font-size: 1.05rem;
+    line-height: 1.9;
     color: #555;
+    text-align: justify;
     margin-bottom: 2.5rem;
-    font-style: italic;
   }
-  
-  .details-button-container {
-    margin-top: 1rem;
+
+  .section-text :deep(p) {
+    margin-bottom: 1.5rem;
   }
-  
-  .details-button {
+
+  .section-text :deep(strong) {
+    color: #b3a090;
+    font-weight: 500;
+  }
+
+  .button-container {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .contact-button {
     display: inline-block;
-    padding: 0.8rem 2.5rem;
-    border: 1px solid #333;
-    border-radius: 50px;
+    padding: 12px 40px;
+    background-color: #e6cfc2;
     color: #333;
     text-decoration: none;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s;
   }
-  
-  .details-button:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+
+  .contact-button:hover {
+    background-color: #dbbcab;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 207, 194, 0.4);
   }
-  
-  /* Media queries pour responsive */
+
+  /* Responsive */
   @media (max-width: 991px) {
-    .formation-title {
+    .formation-hero {
+      padding: 3.5rem 0 2rem;
+    }
+
+    .hero-title {
       font-size: 2.5rem;
     }
-    
-    .details-features {
-      flex-direction: column;
+
+    .formation-content-section {
+      padding: 4rem 0;
     }
-    
-    .feature {
-      flex: 0 0 100%;
-      margin-bottom: 2rem;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    .formation-banner {
-      height: 60vh;
-    }
-    
-    .formation-title {
-      font-size: 2rem;
-    }
-    
-    .formation-button,
-    .details-button {
-      width: 100%;
-      max-width: 300px;
-    }
-    
-    .details-title {
+
+    .section-title {
       font-size: 1.7rem;
     }
-    
-    .details-text,
-    .details-conclusion {
+
+    .section-text {
       font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .formation-hero {
+      padding: 3rem 0 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+    }
+
+    .formation-content-section {
+      padding: 3rem 0;
+    }
+
+    .container {
+      padding: 0 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .section-text {
+      font-size: 0.95rem;
+      text-align: left;
+    }
+
+    .content-block {
+      margin-bottom: 3.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .contact-button {
+      width: 100%;
+      max-width: 300px;
     }
   }
   </style>

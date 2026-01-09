@@ -21,6 +21,7 @@ Route::get('/a-propos', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/rendez-vous', [HomeController::class, 'rdv'])->name('rdv');
 Route::get('/gallerie', [HomeController::class, 'gallerie'])->name('gallerie');
+Route::get('/prix', [HomeController::class, 'pricing'])->name('pricing');
 
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 

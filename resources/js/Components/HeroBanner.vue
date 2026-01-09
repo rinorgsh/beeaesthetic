@@ -1,131 +1,33 @@
 <template>
   <section class="hero-banner">
     <div class="overlay"></div>
-    
-    <!-- Slideshow d'images pour Desktop -->
-    <div class="background-slideshow desktop-slideshow">
-      <div v-for="(image, index) in desktopImages" 
-           :key="'desktop-'+index" 
-           class="slide-bg" 
-           :class="{ active: currentDesktopSlide === index }"
-           :style="{ backgroundImage: `url(${getOptimizedUrl(image, 'desktop')})` }">
-      </div>
-    </div>
-    
-    <!-- Slideshow d'images pour Mobile -->
-    <div class="background-slideshow mobile-slideshow">
-      <div v-for="(image, index) in mobileImages" 
-           :key="'mobile-'+index" 
-           class="slide-bg" 
-           :class="{ active: currentMobileSlide === index }"
-           :style="{ backgroundImage: `url(${getOptimizedUrl(image, 'mobile')})` }">
-      </div>
-    </div>
-    
+
+    <!-- Image de fond unique -->
+    <div class="background-image"></div>
+
     <div class="hero-content">
-      <h1 class="hero-title">BEE AESTHETIC</h1>
-      <p class="hero-subtitle">{{ t.home.hero_subtitle }}</p>
+      <!-- Logo -->
+      <img src="/Images/logo-white.png" alt="Bee Aesthetic Logo" class="hero-logo">
+
+      <!-- Slogan en anglais -->
+      <p class="hero-slogan">everything you need, all in one place</p>
+
+      <!-- Bouton CTA -->
       <a href="/rendez-vous" class="cta-button">{{ t.home.hero_button }}</a>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { useTranslation } from '@/composables/useTranslation';
 
 const { t } = useTranslation();
-
-// Configuration Cloudinary
-const CLOUDINARY_CONFIG = {
-  cloudName: 'dqljt4ans',
-  baseUrl: 'https://res.cloudinary.com/dqljt4ans/image/upload'
-};
-
-// Images pour Desktop (public_ids Cloudinary)
-const desktopImages = ref([
-  'banner_epakca',
-  'banner6_hvhrqp',
-  'banner7_f07bhd',
-
-  // Vous pouvez ajouter banner2_ipwpes si vous le souhaitez
-]);
-
-// Images pour Mobile
-const mobileImages = ref([
-  'banner_epakca',
-  'banner6_hvhrqp',
-  'banner7_f07bhd',
-  'banner3_f85ria',
-  'banner4_ljmqfd',
-  'banner5_thgwzu',
-  'banner2_ipwpes'
-]);
-
-// État pour le suivi des slides actives
-const currentDesktopSlide = ref(0);
-const currentMobileSlide = ref(0);
-const desktopInterval = ref(null);
-const mobileInterval = ref(null);
-const slideInterval = 2200;
-
-/**
- * Génère une URL Cloudinary optimisée avec transformations automatiques
- * @param {string} publicId - L'identifiant public de l'image sur Cloudinary
- * @param {string} deviceType - 'desktop' ou 'mobile'
- * @returns {string} URL optimisée
- */
-function getOptimizedUrl(publicId, deviceType = 'desktop') {
-  const transformations = deviceType === 'mobile'
-    ? 'f_auto,q_auto:good,w_800,c_fill,g_auto,dpr_auto'   // Mobile: 800px, qualité optimisée
-    : 'f_auto,q_auto:good,w_1920,c_fill,g_auto,dpr_auto'; // Desktop: 1920px, qualité optimisée
-  
-  // Construction de l'URL avec transformations
-  return `${CLOUDINARY_CONFIG.baseUrl}/${transformations}/${publicId}`;
-}
-
-// Fonctions pour passer à l'image suivante
-const nextDesktopSlide = () => {
-  currentDesktopSlide.value = (currentDesktopSlide.value + 1) % desktopImages.value.length;
-};
-
-const nextMobileSlide = () => {
-  currentMobileSlide.value = (currentMobileSlide.value + 1) % mobileImages.value.length;
-};
-
-// Fonction pour précharger les images critiques
-function preloadImages() {
-  // Précharger la première image de chaque slideshow
-  const imagesToPreload = [
-    getOptimizedUrl(desktopImages.value[0], 'desktop'),
-    getOptimizedUrl(mobileImages.value[0], 'mobile'),
-  ];
-  
-  imagesToPreload.forEach(src => {
-    const img = new Image();
-    img.src = src;
-  });
-}
-
-// Démarrer les sliders au montage du composant
-onMounted(() => {
-  preloadImages();
-  desktopInterval.value = setInterval(nextDesktopSlide, slideInterval);
-  mobileInterval.value = setInterval(nextMobileSlide, slideInterval);
-});
-
-// Arrêter les sliders quand le composant est détruit
-onBeforeUnmount(() => {
-  if (desktopInterval.value) {
-    clearInterval(desktopInterval.value);
-  }
-  if (mobileInterval.value) {
-    clearInterval(mobileInterval.value);
-  }
-});
 </script>
 
 <style scoped>
+/* Import des polices Google Fonts - Test Noto Serif Display */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap');
+
 .hero-banner {
   position: relative;
   width: 100%;
@@ -144,48 +46,22 @@ onBeforeUnmount(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.45);
   z-index: 2;
 }
 
-/* Styles pour les slideshows d'arrière-plan */
-.background-slideshow {
+/* Image de fond unique */
+.background-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-/* Affichage conditionnel basé sur la taille de l'écran */
-.desktop-slideshow {
-  display: block;
-}
-
-.mobile-slideshow {
-  display: none;
-}
-
-.slide-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  background-image: url('/Images/magasin2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity 1.5s ease;
-  background-color: #000;
-  /* Optimisation du rendu */
-  will-change: opacity;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.slide-bg.active {
-  opacity: 1;
+  z-index: 1;
 }
 
 .hero-content {
@@ -193,62 +69,70 @@ onBeforeUnmount(() => {
   z-index: 3;
   text-align: center;
   padding: 0 20px;
-  max-width: 800px;
+  max-width: 1000px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.hero-title {
-  font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
-  font-size: 5rem;
-  font-weight: 300;
-  letter-spacing: 10px;
-  text-transform: uppercase;
+/* Logo - Beaucoup plus grand et centré */
+.hero-logo {
+  width: 300px;
+  height: auto;
   margin-bottom: 1.5rem;
-  line-height: 1.2;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.4));
 }
 
+/* Slogan - Toujours en anglais */
+.hero-slogan {
+  font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  color: white;
+  margin-bottom: 2.5rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  font-style: italic;
+}
+
+/* Sous-titre - Même style que le bouton (Montserrat) */
 .hero-subtitle {
   font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 300;
-  letter-spacing: 3px;
-  opacity: 0.95;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   color: white;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2.5rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
 }
 
+/* Bouton CTA - Plus grand */
 .cta-button {
   display: inline-block;
-  padding: 15px 40px;
-  background-color: #000;
-  color: #fff;
-  font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
+  padding: 16px 50px;
+  background-color: #e6cfc2;
+  color: #333;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   border-radius: 30px;
-  transition: all 0.4s ease;
+  transition: all 0.3s;
   text-decoration: none;
-  margin-top: 3.5rem;
-  position: relative;
-  border: 2px solid #000;
-  outline: none;
+  margin-top: 1.5rem;
+  border: none;
 }
 
 .cta-button:hover {
-  background-color: transparent;
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.cta-button:active {
-  transform: translateY(1px);
-  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  background-color: #dbbcab;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(230, 207, 194, 0.3);
 }
 
 /* Responsive */
@@ -256,12 +140,19 @@ onBeforeUnmount(() => {
   .hero-banner {
     height: 60vh;
   }
+
+  .hero-logo {
+    width: 350px;
+  }
 }
 
 @media (max-width: 1200px) {
-  .hero-title {
-    font-size: 4.5rem;
-    letter-spacing: 8px;
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-logo {
+    width: 260px;
   }
 }
 
@@ -269,64 +160,74 @@ onBeforeUnmount(() => {
   .hero-banner {
     height: 70vh;
   }
-  
-  .hero-title {
-    font-size: 4rem;
-    letter-spacing: 6px;
+
+  .hero-slogan {
+    font-size: 1.2rem;
   }
-  
+
   .hero-subtitle {
-    font-size: 1.3rem;
-    letter-spacing: 2px;
+    font-size: 0.9rem;
+  }
+
+  .hero-logo {
+    width: 220px;
+    margin-bottom: 1.2rem;
+  }
+
+  .cta-button {
+    padding: 14px 45px;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 767px) {
-  /* Pour appareils mobiles, afficher le slideshow mobile et masquer celui desktop */
-  .desktop-slideshow {
-    display: none;
+  /* Image mobile - même image que desktop */
+  .background-image {
+    background-image: url('/Images/magasin2.jpg');
   }
-  
-  .mobile-slideshow {
-    display: block;
-  }
-  
+
   .hero-banner {
     height: 60vh;
   }
-  
-  .hero-title {
-    font-size: 3rem;
-    letter-spacing: 4px;
-  }
-  
-  .hero-subtitle {
+
+  .hero-slogan {
     font-size: 1.1rem;
-    letter-spacing: 1.5px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
-  
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-logo {
+    width: 180px;
+    margin-bottom: 1rem;
+  }
+
   .cta-button {
-    padding: 10px 25px;
-    font-size: 1rem;
-    margin-top: 10rem;
+    padding: 12px 35px;
+    font-size: 0.9rem;
+    margin-top: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.5rem;
-    letter-spacing: 3px;
+  .hero-slogan {
+    font-size: 0.95rem;
   }
-  
+
   .hero-subtitle {
-    font-size: 1rem;
-    letter-spacing: 1px;
+    font-size: 0.75rem;
   }
-  
+
+  .hero-logo {
+    width: 140px;
+  }
+
   .cta-button {
-    padding: 8px 20px;
-    font-size: 0.9rem;
+    padding: 10px 30px;
+    font-size: 0.85rem;
   }
 }
 </style>

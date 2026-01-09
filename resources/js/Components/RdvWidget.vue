@@ -30,7 +30,7 @@
             <div class="widget-container">
               <div class="salonized-booking"
                    data-company="UmuHfpCbEpkVyVfzeV1bMpNV"
-                   data-color="#FF6575"
+                   data-color="#b3a090"
                    :data-language="currentLanguage"
                    data-height="700"
                    data-inline="true"

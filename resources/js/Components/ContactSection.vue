@@ -1,24 +1,28 @@
 <template>
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 class="hero-title">{{ t.contact.title }}</h1>
+            <p class="hero-subtitle">{{ t.contact.subtitle }}</p>
+        </div>
+    </section>
+
     <section class="contact-section">
         <div class="container">
             <div class="contact-form-container">
 
                 <!-- Message de notification -->
-                <div 
-                    v-if="notification.message" 
+                <div
+                    v-if="notification.message"
                     :class="[
-                        'notification', 
+                        'notification',
                         notification.type === 'success' ? 'success' : 'error'
                     ]"
                 >
                     {{ notification.message }}
                 </div>
 
-                <h1 class="contact-title">{{ t.contact.title }}</h1>
-
                 <div class="contact-text">
-                    <p>{{ t.contact.subtitle }}</p>
-
                     <a href="mailto:info@beeaesthetic.be" class="contact-email">info@beeaesthetic.be</a>
                 </div>
                 
@@ -164,30 +168,47 @@ const handleSubmit = async () => {
     color: #721c24;
     border: 1px solid #f5c6cb;
 }
+  /* Hero Section */
+  .contact-hero {
+    padding: 4rem 0 2.5rem;
+    background-color: #f5e6db;
+    font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #333;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
   .contact-section {
     padding: 5rem 0;
     background-color: #f8f8f8;
     font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
   }
-  
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
-  
+
   .contact-form-container {
     max-width: 700px;
     margin: 0 auto;
     text-align: center;
-  }
-  
-  .contact-title {
-    font-size: 3.2rem;
-    font-weight: 300;
-    color: #555;
-    margin-bottom: 2rem;
-    letter-spacing: 0.5px;
   }
   
   .contact-text {
@@ -246,7 +267,7 @@ const handleSubmit = async () => {
   .form-control {
     width: 100%;
     padding: 0.8rem 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid #e6cfc2;
     border-radius: 4px;
     font-size: 0.95rem;
     color: #333;
@@ -254,7 +275,7 @@ const handleSubmit = async () => {
     transition: border-color 0.3s;
     font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
   }
-  
+
   .form-control:focus {
     outline: none;
     border-color: #b3a090;
@@ -271,48 +292,58 @@ const handleSubmit = async () => {
   }
   
   .btn-submit {
-    padding: 0.8rem 2.5rem;
-    background-color: #000;
-    color: #fff;
+    padding: 12px 40px;
+    background-color: #e6cfc2;
+    color: #333;
     border: none;
-    border-radius: 50px;
-    font-size: 0.9rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 400;
     letter-spacing: 1px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
     text-transform: uppercase;
   }
-  
+
   .btn-submit:hover {
-    background-color: #333;
-    transform: translateY(-2px);
+    background-color: #dbbcab;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(230, 207, 194, 0.3);
   }
   
   /* Media queries pour responsive */
   @media (max-width: 991px) {
+    .contact-hero {
+      padding: 3.5rem 0 2rem;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
     .contact-section {
       padding: 4rem 0;
     }
-    
-    .contact-title {
-      font-size: 2.8rem;
-    }
   }
-  
+
   @media (max-width: 767px) {
+    .contact-hero {
+      padding: 3rem 0 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+    }
+
     .contact-section {
       padding: 3rem 0;
     }
-    
-    .contact-title {
-      font-size: 2.3rem;
-    }
-    
+
     .form-group-name {
       flex-direction: column;
       gap: 0;
     }
-    
+
     .btn-submit {
       width: 100%;
     }

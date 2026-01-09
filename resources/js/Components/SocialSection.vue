@@ -111,20 +111,23 @@
   
   .social-button {
     display: inline-block;
-    background-color: #000;
-    color: #fff;
+    background-color: #e6cfc2;
+    color: #333;
     text-decoration: none;
-    padding: 1rem 3rem;
-    border-radius: 50px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s;
     text-align: center;
-    min-width: 200px;
   }
-  
+
   .social-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #dbbcab;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(230, 207, 194, 0.3);
   }
   
   /* Responsive */

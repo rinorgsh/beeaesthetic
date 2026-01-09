@@ -70,7 +70,14 @@ class HomeController extends Controller
     public function gallerie()
     {
         return Inertia::render('Gallerie', [
-            
+
+        ]);
+    }
+
+    public function pricing()
+    {
+        return Inertia::render('Pricing', [
+
         ]);
     }
 }
