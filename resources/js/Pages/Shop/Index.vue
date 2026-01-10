@@ -302,7 +302,7 @@ const addToCart = (product) => {
 .btn-add-cart {
   flex: 1;
   padding: 0.85rem 1rem;
-  background: #b3a090;
+  background: #593625;
   color: white;
   border: none;
   border-radius: 50px;
@@ -318,16 +318,16 @@ const addToCart = (product) => {
 }
 
 .btn-add-cart:hover {
-  background: #9a8778;
+  background: #442a1d;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(179, 160, 144, 0.3);
+  box-shadow: 0 4px 12px rgba(89, 54, 37, 0.3);
 }
 
 .btn-details {
   padding: 0.85rem 1.2rem;
-  border: 1px solid #e6cfc2;
+  border: 1px solid #593625;
   border-radius: 50px;
-  color: #b3a090;
+  color: #593625;
   text-decoration: none;
   font-size: 0.85rem;
   letter-spacing: 0.5px;
@@ -337,8 +337,8 @@ const addToCart = (product) => {
 }
 
 .btn-details:hover {
-  background-color: #e6cfc2;
-  border-color: #b3a090;
+  background-color: #593625;
+  border-color: #593625;
   color: #fff;
 }
 

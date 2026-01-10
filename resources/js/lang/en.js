@@ -77,6 +77,8 @@ export default {
     lashes_desc: 'Intensify your look with our lash lift and brow lift treatments. Professional and gentle techniques for a naturally enhanced, open and expressive look. Results that last for several weeks for effortless daily beauty.',
     waxing_title: 'Waxing',
     waxing_desc: 'Smooth and soft skin thanks to our professional wax hair removal. Services adapted to all body areas, performed with gentleness and precision.',
+    laser_title: 'Laser Hair Removal',
+    laser_desc: 'A lasting and effective solution for perfectly smooth skin. Our latest generation laser technology offers professional results suitable for all skin types.',
     facial_title: 'Facial Treatments',
     facial_desc: 'Treat yourself to a moment of relaxation with our personalized facial treatments. A complete protocol adapted to your skin type for radiant and lasting beauty.',
     training_title: 'Professional Training',

@@ -111,8 +111,8 @@
   
   .social-button {
     display: inline-block;
-    background-color: #e6cfc2;
-    color: #333;
+    background-color: #593625;
+    color: white;
     text-decoration: none;
     padding: 12px 40px;
     border-radius: 30px;
@@ -125,9 +125,9 @@
   }
 
   .social-button:hover {
-    background-color: #dbbcab;
+    background-color: #442a1d;
     transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(230, 207, 194, 0.3);
+    box-shadow: 0 2px 5px rgba(89, 54, 37, 0.3);
   }
   
   /* Responsive */

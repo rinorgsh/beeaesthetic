@@ -77,6 +77,8 @@ export default {
     lashes_desc: 'Intensifiez votre regard avec nos soins de rehaussement de cils et brow lift. Des techniques professionnelles et délicates pour un regard naturellement sublimé, ouvert et expressif. Des résultats qui durent plusieurs semaines pour une beauté sans effort au quotidien.',
     waxing_title: 'Épilation',
     waxing_desc: 'Une peau douce et lisse grâce à nos épilations à la cire professionnelles. Des prestations adaptées à toutes les zones du corps, réalisées avec douceur et précision.',
+    laser_title: 'Épilation Laser',
+    laser_desc: 'Une solution durable et efficace pour une peau parfaitement lisse. Notre technologie laser de dernière génération offre des résultats professionnels adaptés à tous les types de peau.',
     facial_title: 'Soins du Visage',
     facial_desc: 'Offrez-vous un moment de détente avec nos soins du visage personnalisés. Un protocole complet adapté à votre type de peau pour une beauté éclatante et durable.',
     training_title: 'Formation Professionnelle',

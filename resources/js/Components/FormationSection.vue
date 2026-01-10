@@ -119,8 +119,8 @@
   .contact-button {
     display: inline-block;
     padding: 12px 40px;
-    background-color: #e6cfc2;
-    color: #333;
+    background-color: #593625;
+    color: white;
     text-decoration: none;
     border-radius: 30px;
     font-size: 0.85rem;
@@ -131,9 +131,9 @@
   }
 
   .contact-button:hover {
-    background-color: #dbbcab;
+    background-color: #442a1d;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(230, 207, 194, 0.4);
+    box-shadow: 0 4px 12px rgba(89, 54, 37, 0.4);
   }
 
   /* Responsive */
