@@ -12,6 +12,10 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <!-- Preload hero image for performance -->
+        <link rel="preload" as="image" href="{{ asset('Images/magasin2.webp') }}" type="image/webp" fetchpriority="high">
+        <link rel="preload" as="image" href="{{ asset('Images/magasin2.jpg') }}" fetchpriority="high">
+
         <!-- Scripts -->
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])

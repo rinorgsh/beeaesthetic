@@ -314,7 +314,7 @@ export default {
 
   // FAQ
   faq: {
-    title: 'FAQ – Bee Aesthetic 💅🏻',
+    title: 'FAQ Manicure',
     q1_title: '1. What is BIAB?',
     q1_answer: 'BIAB (Builder in a Bottle) is a flexible gel from The Gel Bottle brand, designed to be applied to natural nails. It is vegan and cruelty free, strengthens the nail, refines the plate, and promotes its natural lengthening after several sessions. It creates a beautiful C-curve and has restorative properties: ideal for fragile or bitten nails.',
     q2_title: '2. How often should I redo my nails?',

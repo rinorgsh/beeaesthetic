@@ -88,12 +88,12 @@
               <span class="service-name">{{ t.pricing.facial_treatment }}</span>
               <span class="service-price">€ 60</span>
             </div>
+
+            <h3 class="category-title" style="margin-top: 2.5rem;">{{ t.pricing.cat_brows }}</h3>
             <div class="price-item">
               <span class="service-name">{{ t.pricing.facial_brows }}</span>
               <span class="service-price">€ 25</span>
             </div>
-
-            <h3 class="category-title" style="margin-top: 2.5rem;">{{ t.pricing.cat_brows }}</h3>
             <div class="price-item">
               <span class="service-name">{{ t.pricing.brows_lift }}</span>
               <span class="service-price">€ 45</span>
@@ -282,7 +282,7 @@ defineProps({
 <style scoped>
 .pricing-hero {
   padding: 4rem 0 2.5rem;
-  background-color: #f5e6db;
+  background-color: #593625;
   text-align: center;
   font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
 }
@@ -296,7 +296,7 @@ defineProps({
 .hero-title {
   font-size: 3rem;
   font-weight: 300;
-  color: #333;
+  color: white;
   letter-spacing: 1px;
   margin-bottom: 0.8rem;
 }
@@ -304,7 +304,7 @@ defineProps({
 .hero-subtitle {
   font-size: 1rem;
   font-weight: 300;
-  color: #555;
+  color: white;
   line-height: 1.8;
   max-width: 600px;
   margin: 0 auto;

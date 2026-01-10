@@ -3,7 +3,18 @@
     <div class="overlay"></div>
 
     <!-- Image de fond unique -->
-    <div class="background-image"></div>
+    <picture>
+      <source srcset="/Images/magasin2.webp" type="image/webp">
+      <img
+        src="/Images/magasin2.jpg"
+        alt="Bee Aesthetic Salon"
+        class="background-image"
+        fetchpriority="high"
+        loading="eager"
+        width="1920"
+        height="1080"
+      >
+    </picture>
 
     <div class="hero-content">
       <!-- Logo -->
@@ -57,10 +68,8 @@ const { t } = useTranslation();
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/Images/magasin2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: center;
   z-index: 1;
 }
 
@@ -181,11 +190,6 @@ const { t } = useTranslation();
 }
 
 @media (max-width: 767px) {
-  /* Image mobile - même image que desktop */
-  .background-image {
-    background-image: url('/Images/magasin2.jpg');
-  }
-
   .hero-banner {
     height: 60vh;
   }

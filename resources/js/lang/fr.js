@@ -314,7 +314,7 @@ export default {
 
   // FAQ
   faq: {
-    title: 'FAQ – Bee Aesthetic 💅🏻',
+    title: 'FAQ Manicure',
     q1_title: '1. C\'est quoi le BIAB ?',
     q1_answer: 'Le BIAB (Builder in a Bottle) est un gel flexible de la marque The Gel Bottle, conçu pour être appliqué sur les ongles naturels. Il est vegan et cruelty free, renforce l\'ongle, affine la plaque, et favorise son allongement naturel après plusieurs séances. Il crée une jolie courbe en C et possède des propriétés réparatrices : idéal pour les ongles fragiles ou rongés.',
     q2_title: '2. À quelle fréquence faut-il refaire ses ongles ?',

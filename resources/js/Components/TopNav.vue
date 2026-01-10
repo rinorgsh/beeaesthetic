@@ -207,6 +207,8 @@ const { t, currentLanguage, changeLanguage } = useTranslation();
   position: relative;
   overflow: hidden;
   display: inline-block;
+  height: 1.2em;
+  line-height: 1.2;
 }
 
 .nav-link span {

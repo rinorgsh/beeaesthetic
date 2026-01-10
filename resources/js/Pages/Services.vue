@@ -29,7 +29,7 @@ const { t } = useTranslation();
 /* Hero Section */
 .services-hero {
   padding: 4rem 0 2.5rem;
-  background-color: #f5e6db;
+  background-color: #593625;
   font-family: 'Montserrat', 'Raleway', 'Helvetica Neue', sans-serif;
   text-align: center;
 }
@@ -43,7 +43,7 @@ const { t } = useTranslation();
 .hero-title {
   font-size: 3rem;
   font-weight: 300;
-  color: #333;
+  color: white;
   letter-spacing: 1px;
   margin-bottom: 0.8rem;
 }
@@ -51,7 +51,7 @@ const { t } = useTranslation();
 .hero-subtitle {
   font-size: 1rem;
   font-weight: 300;
-  color: #555;
+  color: white;
   line-height: 1.8;
   max-width: 600px;
   margin: 0 auto;
