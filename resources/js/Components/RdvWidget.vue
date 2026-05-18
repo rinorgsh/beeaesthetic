@@ -39,15 +39,26 @@
             </div>
           </div>
         </div>
-        
-        
+
+        <!-- Widget Carte cadeau (en bas de la page) -->
+        <div class="voucher-section">
+          <h2 class="widget-heading">{{ t.appointment.gift_card || 'Carte cadeau' }}</h2>
+          <div class="widget-container voucher-container">
+            <VoucherWidget />
+          </div>
+        </div>
+
       </div>
+
+      <!-- Bouton flottant Carte cadeau (fixe sur la page) -->
+      <VoucherWidget mode="button" />
     </section>
   </template>
   
   <script setup>
   import { onMounted } from 'vue';
   import { useTranslation } from '@/composables/useTranslation';
+  import VoucherWidget from '@/Components/VoucherWidget.vue';
 
   const { t, currentLanguage } = useTranslation();
 
@@ -120,6 +131,12 @@
   .widget-container {
     background-color: #f8f8f8;
 
+  }
+
+  .voucher-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
   }
   
   .booking-info {

@@ -204,6 +204,7 @@ export default {
     subtitle: 'Choose the service and time that suits you',
     manicure_pedicure: 'Service By Blerta',
     body_care: 'Service By Lorena',
+    gift_card: 'Gift Card',
   },
 
   // Formation

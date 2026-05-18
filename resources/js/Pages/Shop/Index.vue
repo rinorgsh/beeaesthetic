@@ -25,12 +25,23 @@
     <!-- Products Section -->
     <section class="products-section">
       <div class="container">
-        <div v-if="products.length === 0" class="empty-state">
-          <p>Aucun produit disponible pour le moment.</p>
-          <p class="empty-subtitle">Revenez bientôt découvrir nos nouveautés !</p>
-        </div>
+        <div class="products-grid">
+          <!-- Carte cadeau (widget Salonized) affichée comme un produit -->
+          <div class="product-card voucher-card">
+            <div class="voucher-card-header">
+              <h3 class="product-name">Carte cadeau</h3>
+              <p class="product-description">
+                Offrez un moment de beauté — choisissez le montant et personnalisez votre carte cadeau.
+              </p>
+            </div>
+            <VoucherWidget />
+          </div>
 
-        <div v-else class="products-grid">
+          <div v-if="products.length === 0" class="empty-state">
+            <p>Aucun autre produit disponible pour le moment.</p>
+            <p class="empty-subtitle">Revenez bientôt découvrir nos nouveautés !</p>
+          </div>
+
           <div
             v-for="product in products"
             :key="product.id"
@@ -87,6 +98,7 @@ import { ref } from 'vue';
 import { Link } from '@inertiajs/vue3';
 import TopNav from '@/Components/TopNav.vue';
 import Footer from '@/Components/Footer.vue';
+import VoucherWidget from '@/Components/VoucherWidget.vue';
 import { useCart } from '@/composables/useCart';
 
 defineProps({
@@ -249,6 +261,27 @@ const addToCart = (product) => {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+}
+
+/* Carte cadeau (widget) — occupe toute la largeur de la grille */
+.voucher-card {
+  grid-column: 1 / -1;
+  padding: 1.5rem;
+}
+
+.voucher-card-header {
+  margin-bottom: 1rem;
+}
+
+.voucher-card .product-name {
+  min-height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.voucher-card .product-description {
+  min-height: auto;
+  margin-bottom: 0;
+  -webkit-line-clamp: unset;
 }
 
 /* Product Card */

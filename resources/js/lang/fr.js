@@ -204,6 +204,7 @@ export default {
     subtitle: 'Choisissez le service et l\'horaire qui vous conviennent',
     manicure_pedicure: 'Service By Blerta',
     body_care: 'Service By Lorena',
+    gift_card: 'Carte cadeau',
   },
 
   // Formation
