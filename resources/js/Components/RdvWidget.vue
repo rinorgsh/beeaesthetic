@@ -40,14 +40,6 @@
           </div>
         </div>
 
-        <!-- Widget Carte cadeau (en bas de la page) -->
-        <div class="voucher-section">
-          <h2 class="widget-heading">{{ t.appointment.gift_card || 'Carte cadeau' }}</h2>
-          <div class="widget-container voucher-container">
-            <VoucherWidget />
-          </div>
-        </div>
-
       </div>
 
       <!-- Bouton flottant Carte cadeau (fixe sur la page) -->
@@ -133,12 +125,6 @@
 
   }
 
-  .voucher-section {
-    display: flex;
-    flex-direction: column;
-    margin-top: 4rem;
-  }
-  
   .booking-info {
     display: flex;
     justify-content: space-between;
